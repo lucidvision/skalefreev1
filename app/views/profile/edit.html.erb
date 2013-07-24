@@ -1,0 +1,30 @@
+<% provide(:title, "Edit Profile") %>
+<h1>Change your Profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@profile) do |f| %>
+    	<%= render 'shared/error_messages', object: f.object %>
+
+    	<%= f.label :gender %>
+	    <%= f.text_field :gender %>
+	    <%= f.label :age %>
+	    <%= f.text_field :age %>
+	    <%= f.label :location %>
+	    <%= f.text_field :location %>
+	    <%= f.label :work %>
+	    <%= f.text_field :work %>
+	    <%= f.label :education %>
+	    <%= f.text_field :education %>
+	    <%= f.label :interests %>
+	    <%= f.text_field :interests %>
+	    <%= f.label :philosophy %>
+	    <%= f.text_field :philosophy %>
+	    <%= f.label :personality %>
+	    <%= f.text_field :personality %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724012415) do
+ActiveRecord::Schema.define(:version => 20130724081730) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
+
+  create_table "findposts", :force => true do |t|
+    t.string   "c1"
+    t.string   "c2"
+    t.string   "c3"
+    t.string   "c4"
+    t.string   "c5"
+    t.string   "c6"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "findposts", ["user_id", "created_at"], :name => "index_findposts_on_user_id_and_created_at"
 
   create_table "notifications", :force => true do |t|
     t.string   "type"
@@ -38,6 +52,21 @@ ActiveRecord::Schema.define(:version => 20130724012415) do
   end
 
   add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
+
+  create_table "profiles", :force => true do |t|
+    t.string   "gender"
+    t.string   "age"
+    t.string   "location"
+    t.string   "work"
+    t.string   "education"
+    t.string   "philosophy"
+    t.string   "interests"
+    t.string   "personality"
+    t.string   "about"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "receipts", :force => true do |t|
     t.integer  "receiver_id"
@@ -66,6 +95,8 @@ ActiveRecord::Schema.define(:version => 20130724012415) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "admin"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

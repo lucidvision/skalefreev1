@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  has_many :findposts, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   def mailboxer_email(object)
     email

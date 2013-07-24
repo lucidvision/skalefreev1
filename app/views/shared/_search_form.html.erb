@@ -1,0 +1,14 @@
+<%= search_form_for @q, :url => search_static_pages_path,
+                        :html => {:method => :post} do |s| %>
+  <div class="field">
+    <%= s.label :c1_or_c2_or_c3_or_c4_eq, "Scale 1" %>
+    <%= s.text_field :c1_or_c2_or_c3_or_c4_eq %>
+    <%= s.label :c2_or_c3_or_c4_or_c1_eq, "Scale 2" %>
+    <%= s.text_field :c2_or_c3_or_c4_or_c1_eq %>
+    <%= s.label :c3_or_c4_or_c1_or_c2_eq, "Scale 3" %>
+    <%= s.text_field :c3_or_c4_or_c1_or_c2_eq %>
+    <%= s.label :c4_or_c1_or_c2_or_c3_eq, "Scale 4" %>
+    <%= s.text_field :c4_or_c1_or_c2_or_c3_eq %>
+  </div>
+  <%= s.submit "Search", class: "btn btn-large btn-primary" %>
+<% end %>

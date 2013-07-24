@@ -1,0 +1,32 @@
+<% provide(:title, 'Find Me') %>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/findpost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <% if @user.findposts.any? %>
+        <h3 class="f_title">Findposts (<%= @user.findposts.count %>)</h3>
+        <ol class="findposts">
+          <%= render @findposts %>
+        </ol>
+        <%= will_paginate @findposts %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+	<div class="center hero-unit">
+	  <h1>Home</h1>
+
+	  <h2>
+	    This is the home page for ScaleFree
+	  </h2>
+
+	  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %> 
