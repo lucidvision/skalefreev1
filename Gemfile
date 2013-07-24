@@ -7,8 +7,9 @@ gem 'devise'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'haml-rails'
 gem 'mailboxer'
-gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails'
 
 
 group :development, :test do

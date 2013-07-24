@@ -73,6 +73,13 @@ GEM
     ffi (1.9.0)
     foreigner (1.4.2)
       activerecord (>= 3.0.0)
+    haml (4.0.3)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -180,6 +187,7 @@ DEPENDENCIES
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
   devise
+  haml-rails
   jquery-rails
   mailboxer
   pg (= 0.12.2)
