@@ -1,6 +1,6 @@
 class ProfileController < ApplicationController
 	before_filter :authenticate_user!
-  before_filter :correct_user,   only: :destroy
+  before_filter :correct_user,   only: [:edit, :update]
 
   def edit
   	@user = current_user
@@ -17,4 +17,12 @@ class ProfileController < ApplicationController
       render edit_profile_path(@user)
     end
   end
+
+  private 
+
+  def correct_user
+      @cuser = User.find(params[:id])
+      redirect_to edit_profile_path(current_user) unless current_user == @cuser
+    end
 end
+

@@ -1,14 +1,18 @@
 <%= form_for(@findpost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-  	<%= f.label "Scale 1" %>
+  	<%= f.label "Subject" %>
     <%= f.text_field :c1 %>
-    <%= f.label "Scale 2" %>
+    <%= f.label "Skail 1" %>
     <%= f.text_field :c2 %>
-    <%= f.label "Scale 3" %>
+    <%= f.label "Skail 2" %>
     <%= f.text_field :c3 %>
-    <%= f.label "Scale 4" %>
+    <%= f.label "Skail 3" %>
     <%= f.text_field :c4 %>
+    <%= f.label "Skail 4" %>
+    <%= f.text_field :c5 %>
+    <%= f.label "Skail 5" %>
+    <%= f.text_field :c6 %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -1,0 +1,14 @@
+<%= content_tag_for(:li, conversation) do |conversation| %>
+	<div class="c_info">
+		<%= link_to conversation.subject, conversation %> |
+		<% if conversation.is_completely_trashed?(current_user) %>
+				<%= link_to 'Untrash', [:untrash, conversation], method: :post %>
+		<% else %>
+				<%= link_to 'Trash', [:trash, conversation], method: :post %>
+		<% end %>
+		<br>
+		<span>Posted <%= time_ago_in_words(conversation.created_at) %> ago by </span>
+		<%= link_to conversation.messages.first.sender.name, conversation.messages.first.sender %>
+		<br>
+	</div>
+<% end %>

@@ -1,13 +1,15 @@
 <li>
-  <span class="c1"><%= findpost.c1 %></span>
+  <span class="id"><%= findpost.c1 %></span>
   <span class="c1"><%= findpost.c2 %></span>
   <span class="c1"><%= findpost.c3 %></span>
   <span class="c1"><%= findpost.c4 %></span>
+  <span class="c1"><%= findpost.c5 %></span>
+  <span class="c1"><%= findpost.c6 %></span>
   <div class="f_info">
-    <span class="timestamp">
+    <span>
       Posted <%= time_ago_in_words(findpost.created_at) %> ago
     </span>
-    <% if current_user %>
+    <% if current_user == findpost.user %>
     	<span>
   		  by you | <%= link_to "Delete", findpost, method: :delete,
                                        data: { confirm: "Are you sure?" },
@@ -17,7 +19,7 @@
     	<a href="<%= user_path(findpost.user) %>">
   		</a>
   		<span>
-  		  by <%= findpost.user.name %> | <%= link_to "View profile", findpost.user %> | <%= link_to "Send Message", '#' %>
+  		  by <%= link_to findpost.user.name, findpost.user %> | <%= link_to "Send Message", :new_conversation %>
   		</span>
     <% end %>
   </div>

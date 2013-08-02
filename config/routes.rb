@@ -1,6 +1,8 @@
 Skalefreev1::Application.routes.draw do
   devise_for :users
-  resources :users
+  resources :users do
+    member { post :vote }
+  end
   resources :profile
   resources :findposts, only: [:create, :destroy]
   resources :static_pages do

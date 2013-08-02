@@ -1,12 +1,25 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <div class="span8">
-    <h3><%= @user.name %></h3>
-    <%= link_to "Edit Profile", edit_profile_path(@user) %>
-    <div class="span6 offset3">
-	    <ul class="profile">
-	      	<%= render 'shared/profile' %>
-	    </ul>
-	  </div>
-  </div>
+    <aside class="span4">
+        <section>
+            <h1><%= @user.name %></h1>
+            <% if @user == current_user %>
+            	<%= link_to "Edit Profile", edit_profile_path(@user) %>
+            <% end %>
+            <br>
+            <%= pluralize @user.reputation_for(:votes).to_i, "vote" %>
+            <br>
+            <%= link_to "Up", vote_user_path(@user, type: "up"), method: "post" %>
+            | <%= link_to "Down", vote_user_path(@user, type: "down"), method: "post" %>
+        </section>
+        <div id="traits">
+            <ul>
+           <%= render 'shared/profile' %>
+            </ul>
+        </div>
+        <div id="about">
+            Additional Information: <br><br>
+            <%= @profile.about %>
+        </div>
+    </aside>
 </div>

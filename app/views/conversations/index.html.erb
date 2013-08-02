@@ -1,0 +1,17 @@
+<%= link_to 'Start Convo', :new_conversation, :class => "btn btn-large btn-primary" %>
+
+<div id="convos">
+	<div class="inbox column">
+		<h2>Inbox</h2>
+		<ul><%= render mailbox.inbox %></ul>
+	</div>
+	<div class="sentbox column">
+		<h2>Sentbox</h2>
+		<ul><%= render mailbox.sentbox %></ul>
+	</div>
+	<div class="trashbox column">
+		<h2>Trash</h2>
+		<ul><%= render mailbox.trash %></ul>
+	</div>
+</div>
+

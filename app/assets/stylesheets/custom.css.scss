@@ -24,6 +24,11 @@ section {
   overflow: auto;
 }
 
+ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
 textarea {
   resize: vertical;
 }
@@ -54,7 +59,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
 }
 
 p {
@@ -174,8 +178,21 @@ input {
 }
 
 /* Profile */
-.profile {
-  list-style-type: none;
+
+#traits {
+  padding-top:50px;
+  width: 900px;
+  word-wrap: break-word;
+  border-top: 1px solid #000000;
+}
+
+#about {
+  padding-top:30px;
+  height:300px;
+  width: 900px;
+  word-wrap: break-word;
+  border-bottom: 1px solid #000000;
+
 }
 
 /* findposts */
@@ -196,23 +213,74 @@ input {
 
   li {
     padding: 10px 0;
-    height: 100px;
+    height: 140px;
     border-bottom: 1px solid #000000;
     position: relative;
 
   }
 }
+
 .c1 {
   display: block;
 }
-.timestamp {
-  color: $grayLight;
+
+.id {
+  display: block;
+  font-weight: bold;
 }
+
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+/* convos */
+
+#convos {
+  width: 100%;
+}
+
+#convos .column {
+  position: relative;
+  height: 600px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 31%;
+  padding: 1%;
+  overflow-y:auto;
+}
+
+#convos .inbox {
+  float: left;
+  border-width: 2px;
+}
+
+#convos .sentbox {
+  float: left;
+  border-width: 2px;
+}
+
+#convos .trashbox {
+  float: right;
+  border-width: 2px;
+}
+
+.c_info {
+  padding-bottom: 5px;
+  padding-top: 10px;
+  border-bottom: 1px solid #000000;
+}
+
+.m_info {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid #000000;
+}
+
+.reply {
+  padding-top: 20px;
 }
 
 /* miscellaneous */

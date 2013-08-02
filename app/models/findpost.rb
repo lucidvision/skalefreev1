@@ -1,5 +1,5 @@
 class Findpost < ActiveRecord::Base
-  attr_accessible :c1, :c2, :c3, :c4
+  attr_accessible :c1, :c2, :c3, :c4, :c5, :c6
   belongs_to :user
 
   validates :user_id, presence: true

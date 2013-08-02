@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :findposts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  has_reputation :votes, source: :user, aggregated_by: :sum
+
   def mailboxer_email(object)
     email
   end

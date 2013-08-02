@@ -22,14 +22,13 @@ class UsersController < ApplicationController
   end
 
   def update
+  end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      flash[:success] = "Name/Password Updated!"
-      sign_in @user
-      redirect_to @user
-    else
-      render 'edit'
-    end
+    @user.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
   end
 
   private
