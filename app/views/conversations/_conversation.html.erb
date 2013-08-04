@@ -1,14 +1,16 @@
 <%= content_tag_for(:li, conversation) do |conversation| %>
 	<div class="c_info">
-		<%= link_to conversation.subject, conversation %> |
+		<span class="<%='unread' if conversation.is_unread?(current_user) %>">
+			<%= link_to conversation.subject, conversation %>
+		</span> |
 		<% if conversation.is_completely_trashed?(current_user) %>
 				<%= link_to 'Untrash', [:untrash, conversation], method: :post %>
 		<% else %>
 				<%= link_to 'Trash', [:trash, conversation], method: :post %>
 		<% end %>
 		<br>
-		<span>Posted <%= time_ago_in_words(conversation.created_at) %> ago by </span>
-		<%= link_to conversation.messages.first.sender.name, conversation.messages.first.sender %>
+		<span>Posted <%= time_ago_in_words(conversation.last_message.created_at) %> ago by </span>
+		<%= link_to conversation.last_message.sender.name, conversation.last_message.sender %>
 		<br>
 	</div>
 <% end %>

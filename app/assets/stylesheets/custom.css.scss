@@ -177,7 +177,7 @@ input {
   }
 }
 
-/* Profile */
+/* profile */
 
 #traits {
   padding-top:50px;
@@ -281,6 +281,16 @@ aside {
 
 .reply {
   padding-top: 20px;
+}
+
+.unread {
+  font-weight: bold;
+}
+
+.notify {
+  font-weight: bold;
+  color: yellow;
+  font-size: 150%;
 }
 
 /* miscellaneous */

@@ -27,6 +27,11 @@ class ConversationsController < ApplicationController
     redirect_to :conversations
   end
 
+  def show
+    @c_read = Conversation.find_by_id(params[:id])
+    @c_read.mark_as_read(current_user)
+  end
+
   private
 
   def mailbox
