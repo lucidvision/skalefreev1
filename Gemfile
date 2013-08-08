@@ -17,6 +17,9 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'ransack'
 gem 'activerecord-reputation-system', require: 'reputation_system'
+gem 'mobylette'
+gem 'jquery_mobile_rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

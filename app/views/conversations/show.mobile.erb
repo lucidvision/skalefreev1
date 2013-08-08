@@ -1,0 +1,12 @@
+<h3><%= conversation.subject %></h3>
+<ul data-role="listview">
+  <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
+  	<% message = receipt.message %>
+    <h5><%= link_to message.sender.name, message.sender %></h5>
+    <p><%= message.body %></p>
+    <h6>Posted <%= time_ago_in_words(message.created_at) %> ago</h6>
+  <% end %>
+  <div class="reply">
+		<%= render 'messages/form', conversation: conversation %>
+	</div>
+</ul>

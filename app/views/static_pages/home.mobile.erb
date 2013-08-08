@@ -1,0 +1,26 @@
+<% if signed_in? %>
+	<% provide(:title, 'Find You') %>
+	<div data-role="content">
+		<div data-role="collapsible">
+			<h3>Search</h3>
+      <%= render 'shared/search_form' %>
+		</div>
+		<% if @results.any? %>
+      <h3>Findposts (<%= @results.count %>)</h3>
+      <ul data-role="listview">
+        <%= render @results %>
+      </ul>
+      <%= will_paginate @results %>
+    <% end %>
+  </div>
+<% else %>
+	  <h1>Open New Worlds</h1>
+
+	  <h2>
+	    Find people on the Skail Free Network today!
+	  </h2>
+
+	  <%= link_to "Sign up now!", :new_user_registration, :'data-role' => 'button' %>
+<% end %>
+
+

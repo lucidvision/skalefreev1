@@ -1,0 +1,25 @@
+<% provide(:title, "Edit Profile") %>
+<h3>Change your Profile</h3>
+<%= form_for(@profile) do |f| %>
+
+	<%= f.label :gender %>
+  <%= f.text_field :gender %>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :work %>
+  <%= f.text_field :work %>
+  <%= f.label :education %>
+  <%= f.text_field :education %>
+  <%= f.label :interests %>
+  <%= f.text_field :interests %>
+  <%= f.label :philosophy %>
+  <%= f.text_field :philosophy %>
+  <%= f.label :personality %>
+  <%= f.text_field :personality %>
+  <%= f.label :about %>
+  <%= f.text_area :about %>
+
+  <%= f.submit "Save changes", :'data-role' => 'button' %>
+<% end %>

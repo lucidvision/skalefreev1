@@ -1,0 +1,22 @@
+<h1><%= @user.name %></h1>
+<h3><%= pluralize @user.reputation_for(:votes).to_i, "vote" %></h3>
+<div data-role="controlgroup" data-type="horizontal"  data-mini="true">
+	<%= link_to "Up", vote_user_path(@user, type: "up"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
+	<%= link_to "Down", vote_user_path(@user, type: "down"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
+</div>
+<% if @user == current_user %>
+	<div data-role="controlgroup" data-type="horizontal"  data-mini="true">
+    <%= link_to "Edit Profile", edit_profile_path(@user), :'data-role' => 'button', :'data-inline' => "true" %>
+    <%= link_to "Edit Login", edit_user_registration_path, :'data-role' => 'button', :'data-inline' => "true" %>
+  </div>
+<% end %>
+<br>
+<br>
+<ul data-role="listview">
+    <%= render 'shared/profile' %>
+</ul>
+<br>
+<div id="about">
+    Additional Information: <br><br>
+    <%= @profile.about %>
+</div>

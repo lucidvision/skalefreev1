@@ -1,0 +1,15 @@
+<% provide(:title, 'Convo') %>
+<%= link_to 'Start Convo', :new_conversation, :'data-role' => 'button', "data-ajax" => "false" %>
+
+<div data-role="collapsible">
+   <h3>Inbox</h3>
+   <ul data-role="listview"><%= render mailbox.inbox %></ul>
+</div>
+<div data-role="collapsible">
+   <h3>Sentbox</h3>
+   <ul data-role="listview"><%= render mailbox.sentbox %></ul>
+</div>
+<div data-role="collapsible">
+   <h3>Trash</h3>
+   <ul data-role="listview"><%= render mailbox.trash %></ul>
+</div>

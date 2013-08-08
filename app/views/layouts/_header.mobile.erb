@@ -1,0 +1,11 @@
+<ul>
+	<% if signed_in? %>
+		<li><%= link_to "Find You", root_path %></li>
+		<li><%= link_to "Find Me", findme_path %></li>
+		<li><%= link_to @unread_count + " Convo", conversations_path %></li>
+		<li><%= link_to "Profile", current_user %></li>
+		<li><%= link_to "Sign out", :destroy_user_session, method: :delete %></li>
+	<% else %>
+		<li><%= link_to "Sign in", :new_user_session %></li>
+	<% end %>
+</ul>
