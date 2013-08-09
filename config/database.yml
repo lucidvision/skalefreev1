@@ -21,4 +21,4 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: afternoon-shore-3447
+  database: skalefree
