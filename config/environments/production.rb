@@ -28,7 +28,7 @@ Skalefreev1::Application.configure do
     address: "mail.skalefree.net",
     port: 25,
     authentication: "plain",
-    user_name: "notifications@skalefree.net",
+    user_name: "skalefre@skalefree.net",
     password: "Marijuana1",
     enable_starttls_auto: false
   }
