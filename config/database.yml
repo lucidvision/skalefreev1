@@ -20,5 +20,6 @@ test:
 
 production:
   adapter: postgresql
-  encoding: utf8
+  database: skalefree
   pool: 5
+  timeout: 5000

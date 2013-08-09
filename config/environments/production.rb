@@ -21,6 +21,9 @@ Skalefreev1::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Disable delivery errors, bad email addresses will be ignored
+  config.action_mailer.raise_delivery_errors = false
+
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
@@ -60,9 +63,6 @@ Skalefreev1::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += ['application.js']
-
-  # Disable delivery errors, bad email addresses will be ignored
-  config.action_mailer.raise_delivery_errors = false
 
   # Enable threaded mode
   # config.threadsafe!
