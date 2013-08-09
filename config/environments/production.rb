@@ -26,9 +26,9 @@ Skalefreev1::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "mail.skalefree.net",
-    port: 25,
+    port: 2525,
     authentication: "plain",
-    user_name: "skalefre@skalefree.net",
+    user_name: "notifications@skalefree.net",
     password: "Marijuana1",
     enable_starttls_auto: false
   }
