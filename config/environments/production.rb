@@ -3,7 +3,6 @@ Skalefreev1::Application.configure do
 
   # Code is not reloaded between requests
   config.cache_classes = true
-  config.action_mailer.default_url_options = { :host => 'localhost' }
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
@@ -22,7 +21,7 @@ Skalefreev1::Application.configure do
   config.assets.digest = true
 
   # Disable delivery errors, bad email addresses will be ignored
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.perform_deliveries = true
