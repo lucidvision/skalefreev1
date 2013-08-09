@@ -21,6 +21,18 @@ Skalefreev1::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Change mail delvery to either :smtp, :sendmail, :file, :test
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "mail.skalefree.net",
+    port: 25,
+    authentication: "plain",
+    user_name: "notifications@skalefree.net",
+    password: "Marijuana1",
+    enable_starttls_auto: false
+  }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -50,7 +62,9 @@ Skalefreev1::Application.configure do
   config.assets.precompile += ['application.js']
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
+
+
 
   # Enable threaded mode
   # config.threadsafe!
