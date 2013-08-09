@@ -15,19 +15,18 @@ Skalefreev1::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
 
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "gmail.com",
+    address: "mail.skalefree.net",
+    port: 2525,
     authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: "skalefree25@gmail.com",
-    password: "helloman"
+    user_name: "notifications@skalefree.net",
+    password: "Marijuana1",
+    enable_starttls_auto: false
   }
 
   # Specify what domain to use for mailer URLs
