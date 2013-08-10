@@ -2,7 +2,6 @@
 <html>
 	<head>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <%= stylesheet_link_tag    "mobile", media: "all" %>
 	  <%= javascript_include_tag "application" %>
 	  <script type="text/javascript">
 			$(document).bind("mobileinit", function () {
@@ -11,6 +10,7 @@
 		</script>
 	  <%= javascript_include_tag "jquery.mobile.min" %>
 	  <%= stylesheet_link_tag    "jquery.mobile.min.css" %>
+	  <%= stylesheet_link_tag    "mobile" %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
