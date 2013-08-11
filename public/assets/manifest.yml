@@ -3,10 +3,8 @@ rails.png: rails-8bfa14de3679bed8aaf60b68a4f4d1fe.png
 rails/index.png: rails-8bfa14de3679bed8aaf60b68a4f4d1fe.png
 application.js: application-49a412ff98407d38749eb0c06c18a5bd.js
 application/index.js: application-49a412ff98407d38749eb0c06c18a5bd.js
-application.css: application-fb51295bd1a65c046bfff947511c0b34.css
-application/index.css: application-fb51295bd1a65c046bfff947511c0b34.css
-mobile.css: mobile-44eb6a04afc275fbb59aca24c18d5f08.css
-mobile/index.css: mobile-44eb6a04afc275fbb59aca24c18d5f08.css
+application.css: application-2e5ae68df4af977e244edc1636532961.css
+application/index.css: application-2e5ae68df4af977e244edc1636532961.css
 jquery-mobile/ajax-loader.gif: jquery-mobile/ajax-loader-956f9408f00150200af2c22d1f0399bf.gif
 jquery-mobile/ajax-loader/index.gif: jquery-mobile/ajax-loader-956f9408f00150200af2c22d1f0399bf.gif
 jquery-mobile/icons-18-black.png: jquery-mobile/icons-18-black-bc412e201782b0205e495dbda997fba6.png
