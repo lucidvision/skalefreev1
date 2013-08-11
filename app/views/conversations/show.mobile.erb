@@ -3,7 +3,7 @@
   <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
   	<% message = receipt.message %>
     <h5><%= link_to message.sender.name, message.sender %></h5>
-    <p style="white-space: normal !important"><%= message.body %></p>
+    <p class="notcut"><%= message.body %></p>
     <h6>Posted <%= time_ago_in_words(message.created_at) %> ago</h6>
   <% end %>
   <div class="reply">
