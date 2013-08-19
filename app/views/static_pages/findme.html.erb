@@ -1,5 +1,5 @@
-<% provide(:title, 'Find Me') %>
 <% if signed_in? %>
+<% provide(:title, 'Find Me') %>
   <div class="row">
     <aside class="span4">
       <section>
@@ -8,10 +8,22 @@
       <section>
         <%= render 'shared/findpost_form' %>
       </section>
+      <p>
+        <b>Suggested "Skales":</b><br>
+        1. Purpose <br>
+        2. Location <br>
+        3. Time <br>
+        4. Goal <br>
+        5. Interests <br>
+        6. Condition <br>
+        8. Qualification <br>
+        9. Personality <br>
+        10. Additional Information <br><br>
+      </p>
     </aside>
     <div class="span8">
       <% if @user.findposts.any? %>
-        <h3 class="f_title">Findposts (<%= @user.findposts.count %>)</h3>
+        <h3 class="f_title">Create Findposts (<%= @user.findposts.count %>)</h3>
         <ol class="findposts">
           <%= render @findposts %>
         </ol>

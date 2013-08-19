@@ -1,8 +1,8 @@
 <% if signed_in? %>
-	<% provide(:title, 'Find Me') %>
+	<% provide(:title, 'My Findposts') %>
 	<div data-role="content">
 		<div data-role="collapsible">
-			<h3>Findpost</h3>
+			<h3>Create</h3>
       <%= render 'shared/findpost_form' %>
 		</div>
 		<% if @user.findposts.any? %>

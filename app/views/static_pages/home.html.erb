@@ -8,10 +8,22 @@
       <section>
         <%= render 'shared/search_form' %>
       </section>
+      <p>
+        <b>Suggested "Skales":</b><br>
+        1. Purpose <br>
+        2. Location <br>
+        3. Time <br>
+        4. Goal <br>
+        5. Interests <br>
+        6. Condition <br>
+        8. Qualification <br>
+        9. Personality <br>
+        10. Additional Information <br><br>
+      </p>
     </aside>
     <div class="span8">
       <% if @results.any? %>
-        <h3 class="f_title">Findposts (<%= @results.count %>)</h3>
+        <h3 class="f_title">Search Findposts (<%= @results.count %>)</h3>
         <ol class="findposts">
           <%= render @results %>
         </ol>
@@ -21,12 +33,11 @@
   </div>  
 <% else %>
 	<div class="center hero-unit">
-	  <h1>Open New Worlds</h1>
+	  <h1>Find Opportunity</h1>
 
 	  <h2>
-	    Find people on the Skale Free Network today!
-	  </h2>
-
+      Visit our <%= link_to "about", about_path %> page for more information!
+    </h2>
 	  <%= link_to "Sign up now!", :new_user_registration , class: "btn btn-large btn-primary" %>
 	</div>
 <% end %> 
