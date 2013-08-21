@@ -8,7 +8,7 @@ class FindpostsController < ApplicationController
       flash[:success] = "Findpost created!"
       redirect_to findme_path
     else
-      flash[:error] = "Error creating your findpost! You need at least a subject skale."
+      flash[:error] = "Error creating your findpost! You need at least a subject skale or your skale was too long."
       redirect_to findme_path
     end
   end

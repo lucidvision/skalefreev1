@@ -1,5 +1,5 @@
 <% if signed_in? %>
-	<% provide(:title, 'My Findposts') %>
+	<% provide(:title, 'Create') %>
 	<div data-role="content">
 		<div data-role="collapsible">
 			<h3>Create</h3>
@@ -14,14 +14,10 @@
     <% end %>
   </div>
 <% else %>
-	  <h1>Open New Worlds</h1>
+	  <h1>Find Opportunity</h1>
 
 	  <h2>
-	    Find people on the Skale Free Network today!
+	    Visit our <%= link_to "about", about_path %> page for more information!
 	  </h2>
-
 	  <%= link_to "Sign up now!", :new_user_registration, :'data-role' => 'button' %>
 <% end %> 
-
-
-
