@@ -21,7 +21,7 @@ Skalefreev1::Application.configure do
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "mail.skalefree.net",
+    address: "siteground260.com",
     port: 2525,
     authentication: "plain",
     user_name: "notifications@skalefree.net",
