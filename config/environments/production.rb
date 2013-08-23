@@ -28,8 +28,8 @@ Skalefreev1::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "mail.skalefree.net",
-    port: 465,
+    address: "siteground260.com",
+    port: 2525,
     authentication: "plain",
     user_name: "notifications@skalefree.net",
     password: "Marijuana1",
