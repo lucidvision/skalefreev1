@@ -7,7 +7,7 @@
             	<%= link_to "Edit Profile", edit_profile_path(@user) %>
             <% end %>
             <br>
-            <strong>Node Status: </strong><%= @user.reputation_for(:votes).to_i %>
+            <strong>Reputation: </strong><%= @user.reputation_for(:votes).to_i %>
             <br>
             <%= link_to "Up", vote_user_path(@user, type: "up"), method: "post" %>
             | <%= link_to "Down", vote_user_path(@user, type: "down"), method: "post" %>
