@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update]
 
   def edit
-  	@user = User.find(params[:id])
+  	@user = current_user
     @user.profile ||= Profile.new
   	@profile = @user.profile
   end
@@ -15,8 +15,8 @@ class ProfileController < ApplicationController
       flash[:success] = "Profile Updated!"
       redirect_to @user
     else
-      flash[:error] = "Sorry, something went wrong."
-      redirect_to @user
+      flash[:error] = "Sorry, we couldn't save your changes."
+      redirect_to edit_profile_path(@user)
     end
   end
 
