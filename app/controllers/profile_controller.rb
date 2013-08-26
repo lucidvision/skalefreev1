@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update]
 
   def edit
-  	@user = current_user
+  	@user = User.find(params[:id])
     @user.profile ||= Profile.new
   	@profile = @user.profile
   end
