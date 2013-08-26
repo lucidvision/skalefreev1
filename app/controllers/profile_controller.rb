@@ -4,6 +4,7 @@ class ProfileController < ApplicationController
 
   def edit
   	@user = current_user
+    @user.profile ||= Profile.new
   	@profile = @user.profile
   end
 
@@ -14,7 +15,8 @@ class ProfileController < ApplicationController
       flash[:success] = "Profile Updated!"
       redirect_to @user
     else
-      render edit_profile_path(@user)
+      flash[:error] = "Sorry, something went wrong."
+      redirect_to @user
     end
   end
 
