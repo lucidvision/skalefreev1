@@ -1,6 +1,6 @@
 <h3><%= conversation.subject %></h3>
 <ul data-role="listview">
-  <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
+  <%= content_tag_for(:li, conversation.receipts_for(current_user).reverse) do |receipt| %>
   	<% message = receipt.message %>
     <h5><%= link_to message.sender.name, message.sender %></h5>
     <p style="white-space: normal"><%= message.body %></p>
