@@ -22,4 +22,5 @@
             <%= @profile.about %>
         </div>
     </aside>
+    <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary" %>
 </div>

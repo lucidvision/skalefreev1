@@ -1,4 +1,10 @@
 <li>
   <%= link_to user.name, user %>
   | <%= user.email %>
+  | Active: <%= user.active %>
+  | <%= link_to "Toggle", active_user_path(user), method: :put %><br>
+  <button class="btn dropdown" data-toggle="collapse" data-target="#fp">
+  <div class = "collapse" id="fp">
+  	<%= user.findposts %>
+  </div>
 </li>

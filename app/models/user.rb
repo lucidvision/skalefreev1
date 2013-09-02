@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
+
+  def active_for_authentication?
+    super and self.active?
+  end
 end

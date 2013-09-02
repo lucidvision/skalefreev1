@@ -1,7 +1,7 @@
 Skalefreev1::Application.routes.draw do
   devise_for :users, skip: :registrations
   devise_scope :user do
-  resource :registration,
+    resource :registration,
     only: [:new, :create, :edit, :update],
     path: 'users',
     path_names: { new: 'sign_up' },
@@ -12,6 +12,7 @@ Skalefreev1::Application.routes.draw do
   end
   resources :users do
     member { post :vote }
+    member { put :active }
   end
   resources :profile
   resources :findposts, only: [:create, :destroy]
