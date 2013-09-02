@@ -10,6 +10,7 @@ class ProfileController < ApplicationController
 
   def update
   	@user = current_user
+    @user.profile ||= Profile.new
   	@profile = @user.profile
     if @profile.update_attributes(params[:profile])
       flash[:success] = "Profile Updated!"
