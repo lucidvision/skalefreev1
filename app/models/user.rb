@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   has_reputation :votes, source: :user, aggregated_by: :sum
 
+  default_scope order: 'users.created_at DESC'
+
   def mailboxer_email(object)
     email
   end
