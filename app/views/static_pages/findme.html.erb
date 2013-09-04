@@ -1,43 +1,32 @@
-<% if signed_in? %>
 <% provide(:title, 'Create') %>
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/findpost_form' %>
-      </section>
-      <p>
-        <b>Suggested Criteria:</b><br>
-        1. Purpose <br>
-        2. Location <br>
-        3. Time <br>
-        4. Goal <br>
-        5. Interests <br>
-        6. Condition <br>
-        8. Qualification <br>
-        9. Personality <br>
-        10. Additional Information <br><br>
-      </p>
-    </aside>
-    <div class="span8">
-      <% if @user.findposts.any? %>
-        <h3 class="f_title">Create Findposts (<%= @user.findposts.count %>)</h3>
-        <ol class="findposts">
-          <%= render @findposts %>
-        </ol>
-        <%= will_paginate @findposts %>
-      <% end %>
-    </div>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/findpost_form' %>
+    </section>
+    <p>
+      <b>Suggested Criteria:</b><br>
+      1. Purpose <br>
+      2. Location <br>
+      3. Time <br>
+      4. Goal <br>
+      5. Interests <br>
+      6. Condition <br>
+      8. Qualification <br>
+      9. Personality <br>
+      10. Additional Information <br><br>
+    </p>
+  </aside>
+  <div class="span8">
+    <% if @user.findposts.any? %>
+      <h3 class="f_title">Create Findposts (<%= @user.findposts.count %>)</h3>
+      <ol class="findposts">
+        <%= render @findposts %>
+      </ol>
+      <%= will_paginate @findposts %>
+    <% end %>
   </div>
-<% else %>
-	<div class="center hero-unit">
-    <h1>Find People Efficiently</h1>
-
-    <h2>
-      Visit our <%= link_to "about", about_path %> page for more information!
-    </h2>
-    <%= link_to "Sign up now!", :new_user_registration , class: "btn btn-large btn-primary" %>
-  </div>
-<% end %> 
+</div>

@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_filter :authenticate_user!, only: :findme
 
 	def home
     @q = Findpost.search(params[:q])

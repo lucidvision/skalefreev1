@@ -1,23 +1,14 @@
-<% if signed_in? %>
-	<% provide(:title, 'Create') %>
-	<div data-role="content">
-		<div data-role="collapsible">
-			<h3>Create</h3>
-      <%= render 'shared/findpost_form' %>
-		</div>
-		<% if @user.findposts.any? %>
-      <h3>Findposts (<%= @user.findposts.count %>)</h3>
-      <ul data-role="listview">
-        <%= render @findposts %>
-      </ul>
-      <%= will_paginate @findposts %>
-    <% end %>
-  </div>
-<% else %>
-	  <h1>Find People Efficiently</h1>
-
-	  <h2>
-	    Visit our <%= link_to "about", about_path %> page for more information!
-	  </h2>
-	  <%= link_to "Sign up now!", :new_user_registration, :'data-role' => 'button' %>
-<% end %> 
+<% provide(:title, 'Create') %>
+<div data-role="content">
+	<div data-role="collapsible">
+		<h3>Create</h3>
+    <%= render 'shared/findpost_form' %>
+	</div>
+	<% if @user.findposts.any? %>
+    <h3>Findposts (<%= @user.findposts.count %>)</h3>
+    <ul data-role="listview">
+      <%= render @findposts %>
+    </ul>
+    <%= will_paginate @findposts %>
+  <% end %>
+</div>
