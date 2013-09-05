@@ -1,11 +1,11 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
 <h3>Reputation: <%= @user.reputation_for(:votes).to_i %></h3>
-<%= link_to 'Send Message', new_conversation_path(target: @user.name), :'data-role' => 'button'%>
 <div data-role="controlgroup" data-type="horizontal"  data-mini="true">
 	<%= link_to "Up", vote_user_path(@user, type: "up"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
 	<%= link_to "Down", vote_user_path(@user, type: "down"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
 </div>
+<%= link_to 'Send Message', new_conversation_path(target: @user.name), :'data-role' => 'button'%>
 <% if @user == current_user %>
 	<div data-role="controlgroup" data-type="horizontal"  data-mini="true">
     <%= link_to "Edit Profile", edit_profile_path(@user), :'data-role' => 'button', :'data-inline' => "true" %>
