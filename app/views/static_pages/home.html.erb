@@ -8,9 +8,10 @@
     <% else %>
       <section>
         <h1>Welcome to SFU!</h1> 
-        Please <%= link_to "sign up", :new_user_registration%> now!<br>
-        Visit our <%= link_to "about", about_path %> page for more information.<br>
-        Search for people below!<br><br>
+        Visit our <%= link_to "about", about_path %> page for more information.<br><br>
+        Search for people below. <br>
+        Or <%= link_to "sign up", :new_user_registration%> for access to more features.
+        <br><br>
       <section>
     <% end %>
     <section>
