@@ -9,18 +9,22 @@
     <span>
       Posted <%= time_ago_in_words(findpost.created_at) %> ago
     </span>
-    <% if current_user == findpost.user %>
-    	<span>
-  		  by you | <%= link_to "Delete", findpost, method: :delete,
-                                       data: { confirm: "Are you sure?" },
-                                       title: findpost.c1 %>
-  		</span>
+    <% if signed_in? %>
+      <% if current_user == findpost.user %>
+      	<span>
+    		  by you | <%= link_to "Delete", findpost, method: :delete,
+                                         data: { confirm: "Are you sure?" },
+                                         title: findpost.c1 %>
+    		</span>
+      <% else %>
+      	<a href="<%= user_path(findpost.user) %>">
+    		</a>
+    		<span>
+    		  by <%= link_to findpost.user.name, findpost.user %> | Rep: <%= findpost.user.reputation_for(:votes).to_i %> | <%= link_to "Send Message", new_conversation_path( target: findpost.user.name, reason: findpost.c1 ) %>
+    		</span>
+      <% end %>
     <% else %>
-    	<a href="<%= user_path(findpost.user) %>">
-  		</a>
-  		<span>
-  		  by <%= link_to findpost.user.name, findpost.user %> | Rep: <%= findpost.user.reputation_for(:votes).to_i %> | <%= link_to "Send Message", new_conversation_path( target: findpost.user.name, reason: findpost.c1 ) %>
-  		</span>
+      by <%= findpost.user.name %> | <%= link_to "Sign in", :new_user_session %> for profiles and messaging!
     <% end %>
   </div>
 </li>

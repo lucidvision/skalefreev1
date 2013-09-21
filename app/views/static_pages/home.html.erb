@@ -1,43 +1,41 @@
-<% if signed_in? %>
-  <% provide(:title, 'Search') %>
-  <div class="row">
-    <aside class="span4">
+<% provide(:title, 'Search') %>
+<div class="row">
+  <aside class="span4">
+    <% if signed_in? %> 
       <section>
         <%= render 'shared/user_info' %>
       </section>
+    <% else %>
       <section>
-        <%= render 'shared/search_form' %>
-      </section>
-      <p>
-        <b>Suggested Criteria:</b><br>
-        1. Purpose <br>
-        2. Location <br>
-        3. Time <br>
-        4. Goal <br>
-        5. Interests <br>
-        6. Condition <br>
-        8. Qualification <br>
-        9. Personality <br>
-        10. Additional Information <br><br>
-      </p>
-    </aside>
-    <div class="span8">
-      <% if @results.any? %>
-        <h3 class="f_title">Search Findposts (<%= @results.count %>)</h3>
-        <ol class="findposts">
-          <%= render @results %>
-        </ol>
-        <%= will_paginate @results %>
-      <% end %>
-    </div>
-  </div>  
-<% else %>
-	<div class="center hero-unit">
-	  <h1>Welcome to SFU</h1>
-
-	  <h2>
-      Visit our <%= link_to "about", about_path %> page for more information!
-    </h2>
-	  <%= link_to "Sign up now!", :new_user_registration , class: "btn btn-large btn-primary" %>
-	</div>
-<% end %> 
+        <h1>Welcome to SFU!</h1> 
+        Please <%= link_to "sign up", :new_user_registration%> now!<br>
+        Visit out <%= link_to "about", about_path %> page for more information.<br>
+        Search for people below!<br><br>
+      <section>
+    <% end %>
+    <section>
+      <%= render 'shared/search_form' %>
+    </section>
+    <p>
+      <b>Suggested Criteria:</b><br>
+      1. Purpose <br>
+      2. Location <br>
+      3. Time <br>
+      4. Goal <br>
+      5. Interests <br>
+      6. Condition <br>
+      8. Qualification <br>
+      9. Personality <br>
+      10. Additional Information <br><br>
+    </p>
+  </aside>
+  <div class="span8">
+    <% if @results.any? %>
+      <h3 class="f_title">Search Findposts (<%= @results.count %>)</h3>
+      <ol class="findposts">
+        <%= render @results %>
+      </ol>
+      <%= will_paginate @results %>
+    <% end %>
+  </div>
+</div>  

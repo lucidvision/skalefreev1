@@ -1,23 +1,14 @@
-<% if signed_in? %>
-	<% provide(:title, 'Search') %>
-	<div data-role="content">
-		<div data-role="collapsible">
-			<h3>Search</h3>
-      <%= render 'shared/search_form' %>
-		</div>
-		<% if @results.any? %>
-      <h3>Findposts (<%= @results.count %>)</h3>
-      <ul data-role="listview">
-        <%= render @results %>
-      </ul>
-      <%= will_paginate @results %>
-    <% end %>
-  </div>
-<% else %>
-	  <h1>Welcome to SFU</h1>
-
-	  <h2>
-	    Visit our <%= link_to "about", about_path %> page for more information!
-	  </h2>
-	  <%= link_to "Sign up now!", :new_user_registration, :'data-role' => 'button' %>
-<% end %>
+<% provide(:title, 'Search') %>
+<div data-role="content">
+	<div data-role="collapsible">
+		<h3>Search</h3>
+    <%= render 'shared/search_form' %>
+	</div>
+	<% if @results.any? %>
+    <h3>Findposts (<%= @results.count %>)</h3>
+    <ul data-role="listview">
+      <%= render @results %>
+    </ul>
+    <%= will_paginate @results %>
+  <% end %>
+</div>
