@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :findposts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 12 }
+  validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 15 }
 
   has_reputation :votes, source: :user, aggregated_by: :sum
 
