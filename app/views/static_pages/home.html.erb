@@ -32,11 +32,11 @@
   </aside>
   <div class="span8">
     <% if @results.any? %>
-      <h3 class="f_title">Search Findposts (<%= @results.count %>)</h3>
+      <h3 class="f_title">Search Findposts</h3>
       <ol class="findposts">
         <%= render @results %>
+        <%= paginate @results %>
       </ol>
-      <%= will_paginate @results %>
     <% end %>
   </div>
 </div>  
