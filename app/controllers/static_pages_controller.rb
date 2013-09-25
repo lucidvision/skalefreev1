@@ -14,6 +14,8 @@ class StaticPagesController < ApplicationController
 
   def search
     home
+    @q = Findpost.search(params[:q])
+    @results = @q.result.paginate(page: params[:page])
     render :home
   end
 

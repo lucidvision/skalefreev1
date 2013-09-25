@@ -1,7 +1,7 @@
 <%= form_for @findpost, builder: ComboboxFormBuilder do |f| %>
   <div class="field">
   	<%= f.label :c1, "Subject (Double Click for Categories)" %>
-    <%= f.combobox_tag(:c1, options_for_select(["Study Group", "Friend", "Class Break", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
+    <%= f.combobox_tag(:c1, options_for_select(["Study Group", "Friend", "Class Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
     <%= f.label :c2, "Criteria 1" %>
     <%= f.text_field :c2 %>
     <%= f.label :c3, "Criteria 2" %>
