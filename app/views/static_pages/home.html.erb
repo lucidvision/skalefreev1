@@ -35,7 +35,7 @@
       <h3 class="f_title">Search Findposts</h3>
       <ol class="findposts">
         <%= render @results %>
-        <%= paginate @results %>
+        <%= paginate @results, :theme => 'twitter-bootstrap' %>
       </ol>
     <% end %>
   </div>
