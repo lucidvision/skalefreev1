@@ -3,7 +3,7 @@
                         builder: Combobox1FormBuilder do |s| %>
   <div class="field">
     <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Subject (Double Click for Categories)" %>
-    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Study Group", "Friend", "Class Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
+    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
     <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, "Criteria 1" %>
     <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
     <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>

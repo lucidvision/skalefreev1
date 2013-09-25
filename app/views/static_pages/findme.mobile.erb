@@ -8,7 +8,7 @@
     <h3>Findposts (<%= @user.findposts.count %>)</h3>
     <ul data-role="listview">
       <%= render @findposts %>
-      <%= paginate @findposts, :theme => 'twitter-bootstrap' %>
+      <%= paginate @findposts %>
     </ul>
   <% end %>
 </div>
