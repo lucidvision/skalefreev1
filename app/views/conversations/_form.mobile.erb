@@ -1,6 +1,6 @@
 <%= simple_form_for :conversation, url: :conversations do |f| %>
 	<%= f.input :recipients, input_html: { value: @target } %>
   <%= f.input :subject, input_html: { value: @reason } %>
-	<%= f.input :body %>
+	<%= f.input :body, :as => :text, :input_html => {:rows => 5} %>
   <%= f.button :submit, :'data-role' => 'button' %>
 <% end %>
