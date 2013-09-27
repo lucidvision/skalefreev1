@@ -31,12 +31,16 @@
     </p>
   </aside>
   <div class="span8">
+    <h3 class="f_title">Search Findposts</h3>
     <% if @results.any? %>
-      <h3 class="f_title">Search Findposts</h3>
       <ol class="findposts">
         <%= render @results %>
         <%= paginate @results, :theme => 'twitter-bootstrap' %>
       </ol>
+    <% else %> 
+      <div class="findposts"><br><br>
+        Sorry, your search has 0 results
+      </div>
     <% end %>
   </div>
 </div>  

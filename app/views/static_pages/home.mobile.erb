@@ -4,11 +4,13 @@
 		<h3>Search</h3>
     <%= render 'shared/search_form' %>
 	</div>
+  <h3>Findposts</h3>
 	<% if @results.any? %>
-    <h3>Findposts</h3>
     <ul data-role="listview">
       <%= render @results %>
       <%= paginate @results %>
     </ul>
+  <% else %>
+    <h2>Sorry, your search has 0 results.</h2>
   <% end %>
 </div>
