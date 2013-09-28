@@ -1,11 +1,10 @@
 <h1><%= conversation.subject %></h1>
 <ul>
-  <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
+  <%= content_tag_for(:li, conversation.messages) do |receipt| %>
 	  <div class="m_info">
-	  	<% message = receipt.message %>
-	    <h5><%= link_to message.sender.name, message.sender %></h5>
-	    <p><%= message.body %></p>
-	    <span>Posted <%= time_ago_in_words(message.created_at) %> ago</span>
+	    <h5><%= link_to receipt.sender.name, receipt.sender %></h5>
+	    <p><%= receipt.body %></p>
+	    <span>Posted <%= time_ago_in_words(receipt.created_at) %> ago</span>
 	  </div>
   <% end %>
   <div class="reply">

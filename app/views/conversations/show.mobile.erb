@@ -1,10 +1,9 @@
 <h3><%= conversation.subject %></h3>
 <ul data-role="listview">
-  <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
-  	<% message = receipt.message %>
-    <h5><%= link_to message.sender.name, message.sender %></h5>
-    <p style="white-space: normal"><%= message.body %></p>
-    <h6>Posted <%= time_ago_in_words(message.created_at) %> ago</h6>
+  <%= content_tag_for(:li, conversation.messages) do |receipt| %>
+    <h5><%= link_to receipt.sender.name, receipt.sender %></h5>
+    <p style="white-space: normal"><%= receipt.body %></p>
+    <h6>Posted <%= time_ago_in_words(receipt.created_at) %> ago</h6>
   <% end %>
   <div class="reply">
 		<%= render 'messages/form', conversation: conversation %>
