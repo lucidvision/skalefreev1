@@ -7,21 +7,29 @@
       </section>
     <% else %>
       <section>
-        <h1>Welcome to SFU Wallposts!</h1> 
+        <h1>Welcome to SFU Findposts!</h1> 
         Visit our <%= link_to "about", about_path %> page for more information.<br><br>
-        Search for wallposts below. <br><br>
-        Or visit our <%= link_to "findpost", findyou_path %> search engine to find people.
+        Search for people below. <br>
+        Or <%= link_to "sign up", :new_user_registration%> for access to more features.
         <br><br>
       <section>
     <% end %>
     <section>
-      <%= render 'shared/wall_form' %>
-      <h4>You have selected the wall:<br><br><div id="wall_selection"></div></h4>
-      <% if signed_in? %> 
-        <%= render 'shared/forumpost_form' %>
-      <% else %>
-        Please <%= link_to "sign up", :new_user_registration%> to create wallposts!
-      <% end %>
+      <%= render 'shared/search_form' %>
+    </section>
+    <section>
+      <p>
+        <b>Suggested Criteria:</b><br>
+        1. Purpose <br>
+        2. Location <br>
+        3. Time <br>
+        4. Goal <br>
+        5. Interests <br>
+        6. Condition <br>
+        8. Qualification <br>
+        9. Personality <br>
+        10. Additional Information <br>
+      </p>
     </section>
     <section>
       <p>
@@ -34,14 +42,14 @@
     </section>
   </aside>
   <div class="span8">
-    <h3 class="f_title">Wallposts</h3>
-    <% if @wall.any? %>
-      <ol class="wall_results">
-        <%= render @wall %>
-        <%= paginate @wall, :theme => 'twitter-bootstrap' %>
+    <h3 class="f_title">Search Findposts</h3>
+    <% if @results.any? %>
+      <ol class="results">
+        <%= render @results %>
+        <%= paginate @results, :theme => 'twitter-bootstrap' %>
       </ol>
     <% else %> 
-      <div class="wall_results"><br><br>
+      <div class="results"><br><br>
         Sorry, your search has 0 results
       </div>
     <% end %>

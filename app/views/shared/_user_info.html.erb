@@ -3,9 +3,10 @@
 <h1>
   <%= current_user.name %>
 </h1>
+<%= pluralize(current_user.forumposts.count, "wallpost") %><br>
+<%= pluralize(current_user.findposts.count, "findpost") %><br>
 <span>
   <%= link_to "View Profile", current_user %>
 </span>
 <span>
-  <%= pluralize(current_user.findposts.count, "findpost") %>
 </span>

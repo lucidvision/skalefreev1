@@ -3,6 +3,8 @@
     <aside class="span4">
         <section>
             <h1><%= @user.name %></h1>
+            <%= pluralize(@user.forumposts.count, "wallpost") %><br>
+            <%= pluralize(@user.findposts.count, "findpost") %><br>
             <% if @user == current_user %>
             	<%= link_to "Edit Profile", edit_profile_path(@user) %>
             <% end %>

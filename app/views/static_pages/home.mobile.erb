@@ -1,11 +1,30 @@
-<% provide(:title, 'Search') %>
+<% provide(:title, 'Wallposts') %>
 <div data-role="content">
-	<div data-role="collapsible">
-		<h3>Search</h3>
-    <%= render 'shared/search_form' %>
-	</div>
-	<% if @results.any? %>
-    <h3>Findposts</h3>
+  <div data-role="collapsible">
+    <h3>Categories</h3>
+    Confessions<br>
+    Funny<br>
+    Did You Know<br>
+    Games<br>
+    News<br>
+    Academic<br>
+    Social<br>
+    SFU<br>
+    Sport<br>
+    Intellectual<br>
+    Entertainment<br>
+    WTF<br>
+    Music<br>
+    Club<br>
+    Skalefree<br>
+  </div>
+  You're in <div id="wall_selection"></div><br>
+  <%= render 'shared/search_form' %>
+  <% if signed_in? %> 
+    <%= render 'shared/forumpost_form' %>
+  <% end %>
+  <% if @results.any? %>
+    <h3>Wallposts</h3>
     <ul data-role="listview">
       <%= render @results %>
       <%= paginate @results %>

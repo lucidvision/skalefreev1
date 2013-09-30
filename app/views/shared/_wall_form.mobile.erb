@@ -1,0 +1,9 @@
+<%= search_form_for @q, :url => search_static_pages_path,
+                        :html => {:method => :post},
+                        :remote => true do |f| %>
+  <div class="field">
+    <%= f.label :forum_cont, "Wall" %>
+    <%= f.text_field :forum_cont, :id => "wall"  %>
+  </div>
+  <%= f.submit "Select / Refresh", :onclick => "store_search()", :id => "second" %>
+<% end %>

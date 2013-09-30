@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 gem 'rails', '3.2.13'
 
 gem 'rake'
 gem 'devise'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'haml-rails'
 gem 'mailboxer'

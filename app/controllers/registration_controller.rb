@@ -5,7 +5,6 @@ class RegistrationController < Devise::RegistrationsController
 	end
 
 	def create
-
 		@user = User.new
 		@user.username = params[:user][:name]
 		@user.email = params[:user][:email]
@@ -22,5 +21,4 @@ class RegistrationController < Devise::RegistrationsController
 			render :action => "new"
 		end
 	end
-
 end

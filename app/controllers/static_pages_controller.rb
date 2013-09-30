@@ -2,14 +2,16 @@ class StaticPagesController < ApplicationController
   before_filter :authenticate_user!, only: :findme
 
 	def home
-    @q = Findpost.search(params[:q])
-    @results = @q.result.page(params[:page])
-  end
+    @user = current_user
+    @forumpost = @user.forumposts.build if signed_in?
+    @forumposts = @user.forumposts.page(params[:page]) if signed_in?
+    @q = Forumpost.search(params[:q])
+    @wall = @q.result(distinct: true).page(params[:page])
 
-  def findme
-  	@user = current_user
-  	@findpost = @user.findposts.build if signed_in?
-    @findposts = @user.findposts.page(params[:page])
+    respond_to do |format|
+      format.html 
+      format.js
+    end 
   end
 
   def search
@@ -17,7 +19,10 @@ class StaticPagesController < ApplicationController
     render :home
   end
 
-  def help
+  def findpost_help
+  end
+
+  def wallpost_help
   end
 
   def about

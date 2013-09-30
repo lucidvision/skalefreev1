@@ -1,5 +1,5 @@
 class FindpostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: :findyou
   before_filter :correct_user,   only: :destroy
 
   def create
@@ -8,9 +8,35 @@ class FindpostsController < ApplicationController
       flash[:success] = "Findpost created!"
       redirect_to findme_path
     else
-      flash[:error] = "Error creating your findpost! You need at least a subject or your criteria was too long."
+      flash[:error] = "Error creating your Findpost! You need at least a subject or your criteria was too long."
       redirect_to findme_path
     end
+  end
+
+  def findyou
+    @q = Findpost.search(params[:q])
+    @results = @q.result.page(params[:page])
+
+    respond_to do |format|
+      format.html 
+      format.js
+    end 
+  end
+
+  def search
+    findyou
+    render :findyou
+  end
+
+  def findme
+    @user = current_user
+    @findpost = @user.findposts.build if signed_in?
+    @findposts = @user.findposts.page(params[:page])
+
+    respond_to do |format|
+      format.html 
+      format.js
+    end 
   end
 
   def destroy

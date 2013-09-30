@@ -1,4 +1,4 @@
-<%= form_for @findpost, builder: ComboboxFormBuilder do |f| %>
+<%= form_for @findpost, :remote => true, builder: ComboboxFormBuilder do |f| %>
   <div class="field">
   	<%= f.label :c1, "Subject (Double Click for Categories)" %>
     <%= f.combobox_tag(:c1, options_for_select(["Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>

@@ -1,0 +1,32 @@
+<% provide(:title, 'Search') %>
+<div data-role="content">
+  <div data-role="collapsible">
+    <h3>Categories</h3>
+    Study<br>
+    Friend<br>
+    Break<br>
+    Games<br>
+    Project<br>
+    Event<br>
+    Textbook<br>
+    Sport<br>
+    Party<br>
+    Music<br>
+    Club<br>
+    Tutor<br>
+  </div>
+  <div data-role="collapsible">
+    <h3>Search</h3>
+    <%= render 'shared/search_form' %>
+  </div>
+  <% if @results.any? %>
+    <h3>Findposts</h3>
+    <ul data-role="listview">
+      <%= render @results %>
+      <%= paginate @results %>
+    </ul>
+  <% else %>
+    <br><br>
+    <h3>Sorry, your search has 0 results.</h3>
+  <% end %>
+</div>

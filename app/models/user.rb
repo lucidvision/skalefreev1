@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   has_many :findposts, dependent: :destroy
+  has_many :forumposts, dependent: :destroy
   has_one :profile, dependent: :destroy
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 15 }

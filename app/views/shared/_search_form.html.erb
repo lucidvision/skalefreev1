@@ -1,19 +1,24 @@
-<%= search_form_for @q, :url => search_static_pages_path,
+<%= search_form_for @q, :url => search_findposts_path,
                         :html => {:method => :post},
+                        :remote => true,
                         builder: Combobox1FormBuilder do |s| %>
   <div class="field">
     <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Subject (Double Click for Categories)" %>
-    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
-    <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, "Criteria 1" %>
-    <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
-    <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>
-    <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont %>
-    <%= s.label :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, "Criteria 3" %>
-    <%= s.text_field :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont %>
-    <%= s.label :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont, "Criteria 4" %>
-    <%= s.text_field :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont %>
-    <%= s.label :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont, "Criteria 5" %>
-    <%= s.text_field :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont %>
+    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %><br><br>
+    <input type="button" class="btn btn-success" data-toggle="collapse" data-target="#criteria" value="Add more criteria to narrow your results">
+    <div id="criteria" class="collapse out">
+        <br>
+        <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, "Criteria 1" %>
+        <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
+        <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>
+        <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont %>
+        <%= s.label :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, "Criteria 3" %>
+        <%= s.text_field :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont %>
+        <%= s.label :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont, "Criteria 4" %>
+        <%= s.text_field :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont %>
+        <%= s.label :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont, "Criteria 5" %>
+        <%= s.text_field :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont %>
+    </div><br>
   </div>
   <%= s.submit "Search", class: "btn btn-large btn-primary" %>
 <% end %>
