@@ -6,10 +6,10 @@ class ForumpostsController < ApplicationController
   	@forumpost = current_user.forumposts.build(params[:forumpost])
     if @forumpost.save
       flash[:success] = "Wallpost created!"
-      redirect_to root_path
+      redirect_to search_static_pages_path
     else
       flash[:error] = "Error creating your Wallpost!"
-      redirect_to root_path
+      redirect_to search_static_pages_path
     end
   end
 
