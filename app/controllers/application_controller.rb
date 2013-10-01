@@ -12,18 +12,20 @@ class ApplicationController < ActionController::Base
   end
 
   def set_request_format
-	  if is_mobile_request? && request.filtered_parameters["format"].to_s == "text/html"
-	      request.filtered_parameters["format"] = :mobile
-	  elsif is_mobile_request? && request.filtered_parameters["format"].to_s == "text/javascript"
-	      request.filtered_parameters["format"] = :mobilejs
-	  end
-	end
+	  if is_mobile_request?
+	    if request.format == :js
+	      request.format = :mobilejs
+	    else
+	      request.format = :mobile
+    	end
+    end
+  end
 
 	def set_format_fallbacks
-	  if request.filtered_parameters["format"] == :mobile
-	    request.filtered_parameters["format"] = :html
-	  elsif request.filtered_parameters["format"] == :mobilejs
-	    request.filtered_parameters["format"] = :js
+	  if request.format == :mobile
+	    self.formats = [:mobile, :html]
+	  elsif request.format == :mobilejs
+	    self.formats = [:mobilejs, :js]
 	  end
 	end
   
