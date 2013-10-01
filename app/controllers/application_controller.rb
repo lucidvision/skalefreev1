@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	include Mobylette::RespondToMobileRequests
   protect_from_forgery
   before_filter :unread
-  before_filter :set_request_format, :set_format_fallbacks
+  before_filter :set_request_format
 
   def unread
   	if signed_in?
@@ -20,13 +20,4 @@ class ApplicationController < ActionController::Base
     	end
     end
   end
-
-	def set_format_fallbacks
-	  if request.format == :mobile
-	    self.formats = [:mobile, :html]
-	  elsif request.format == :mobilejs
-	    self.formats = [:mobilejs, :js]
-	  end
-	end
-  
 end
