@@ -12,10 +12,12 @@ class ApplicationController < ActionController::Base
   end
 
   def set_request_format
+  	session[:mobile_param] = params[:mobile] if params[:mobile]
+  	request.format = :mobile if mobile_device? && !request.xhr?
 	  if is_mobile_request?
 	    if request.format == :js
 	      request.format = :mobilejs
-	    elsif request.format == :mobilejs
+	    else
 	      request.format = :mobile
     	end
     end
