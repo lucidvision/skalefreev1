@@ -1,8 +1,9 @@
 <ul>
 		<li><%= link_to "Wallposts", root_path %></li>
-		<li><%= link_to "Search", root_path %></li>
+		<li><%= link_to "Search", findyou_path %></li>
 		<% if signed_in? %>
-		<li><%= link_to "Create", findme_path %></li>
-		<li><%= link_to @unread_count + " Mail", conversations_path %></li>
-		<li><%= link_to "Profile", current_user %></li>
+			<li><%= link_to "Create", findme_path %></li>
+			<li><%= link_to @unread_count + " Mail", conversations_path %></li>
+			<li><%= link_to "Profile", current_user %></li>
+		<% end %>
 </ul>
