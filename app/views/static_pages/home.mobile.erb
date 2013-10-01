@@ -23,11 +23,11 @@
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %>
-  <% if @results.any? %>
+  <% if @wall.any? %>
     <h3>Wallposts</h3>
     <ul data-role="listview">
-      <%= render @results %>
-      <%= paginate @results %>
+      <%= render @wall %>
+      <%= paginate @wall %>
     </ul>
   <% else %>
     <br><br>
