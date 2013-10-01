@@ -23,14 +23,14 @@
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %>
-  <% if @wall.any? %>
-    <h3>Wallposts</h3>
-    <ul style="list-style-type: none; padding: 0;">
-      <%= render @wall %>
-      <%= paginate @wall %>
-    </ul>
-  <% else %>
-    <br><br>
-    <h3>Sorry, your search has 0 results.</h3>
-  <% end %>
 </div>
+<% if @wall.any? %>
+  <h3>Wallposts</h3>
+  <ul style="list-style-type: none; padding: 0;">
+    <%= render @wall %>
+    <%= paginate @wall %>
+  </ul>
+<% else %>
+  <br><br>
+  <h3>Sorry, your search has 0 results.</h3>
+<% end %>
