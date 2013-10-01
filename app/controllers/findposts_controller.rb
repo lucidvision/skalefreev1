@@ -19,6 +19,7 @@ class FindpostsController < ApplicationController
 
     respond_to do |format|
       format.html 
+      format.mobilejs
       format.js
     end 
   end
@@ -35,6 +36,7 @@ class FindpostsController < ApplicationController
 
     respond_to do |format|
       format.html 
+      format.mobilejs
       format.js
     end 
   end

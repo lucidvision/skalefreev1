@@ -21,7 +21,7 @@
 	</div>
 	<% if @user.findposts.any? %>
     <h3>Findposts (<%= @user.findposts.count %>)</h3>
-    <ul data-role="listview", class="findposts">
+    <ul data-role="listview", class="find_mobile">
       <%= render @findposts %>
       <%= paginate @findposts %>
     </ul>
