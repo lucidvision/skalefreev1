@@ -10,8 +10,8 @@ class StaticPagesController < ApplicationController
 
     respond_to do |format|
       format.mobile
-      format.mobilejs
       format.html 
+      format.mobilejs
       format.js
     end 
   end
