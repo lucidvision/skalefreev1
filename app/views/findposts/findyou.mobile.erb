@@ -21,7 +21,7 @@
   </div>
   <% if @results.any? %>
     <h3>Findposts</h3>
-    <ul data-role="listview">
+    <ul data-role="listview", class="results">
       <%= render @results %>
       <%= paginate @results %>
     </ul>
