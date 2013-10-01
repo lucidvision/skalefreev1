@@ -18,8 +18,6 @@ class FindpostsController < ApplicationController
     @results = @q.result.page(params[:page])
 
     respond_to do |format|
-      format.mobile
-      format.mobilejs
       format.html
       format.js
     end 
@@ -36,8 +34,6 @@ class FindpostsController < ApplicationController
     @findposts = @user.findposts.page(params[:page])
 
     respond_to do |format|
-      format.mobile
-      format.mobilejs
       format.html
       format.js
     end 

@@ -25,9 +25,11 @@
   <% end %>
   <% if @wall.any? %>
     <h3>Wallposts</h3>
-    <ul data-role="listview", class="wall_mobile">
-      <%= render @wall %>
-      <%= paginate @wall %>
+    <ul data-role="listview">
+      <div class="wall_mobile">
+        <%= render @wall %>
+        <%= paginate @wall %>
+      </div>
     </ul>
   <% else %>
     <br><br>
