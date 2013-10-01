@@ -195,12 +195,10 @@ input {
 
 .wall_mobile {
   list-style: none;
-  margin: 10px 0 0 0;
-  float: right;
   width: 530px;
 
   li {
-    padding: 10px 0;
+    padding-top: 10px 0 10px 0;
     height: 140px;
     border-bottom: 1px solid #000000;
     position: relative;

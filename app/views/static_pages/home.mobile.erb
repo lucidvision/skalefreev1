@@ -25,10 +25,10 @@
   <% end %>
   <% if @wall.any? %>
     <h3>Wallposts</h3>
-    <ul class="wall_mobile">
+    <ol class="wall_mobile">
       <%= render @wall %>
       <%= paginate @wall %>
-    </ul>
+    </ol>
   <% else %>
     <br><br>
     <h3>Sorry, your search has 0 results.</h3>
