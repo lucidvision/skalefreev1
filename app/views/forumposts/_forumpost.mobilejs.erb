@@ -1,29 +1,28 @@
 <li>
-  <br><br>
-  <span class="id"><%= forumpost.forum %></span><br>
-  <span class="c1"><%= forumpost.content %></span>
-  <div class="f_info">
-    <span>
-      Posted <%= time_ago_in_words(forumpost.created_at) %> ago
-    </span>
-    <% if signed_in? %>
-      <% if current_user == forumpost.user %>
-      	<span>
-    		  by you | <%= link_to "Delete", forumpost, method: :delete,
-                                         data: { confirm: "Are you sure?" },
-                                         title: forumpost.content %>
-    		</span>
+  <div style="border-bottom: 1px solid #000000; padding-bottom: 5px; padding-top: 5px;">
+    <b><%= forumpost.forum %></b>
+    <span><%= forumpost.content %></span>
+    <div>
+      <span>
+        Posted <%= time_ago_in_words(forumpost.created_at) %> ago
+      </span>
+      <% if signed_in? %>
+        <% if current_user == forumpost.user %>
+        	<span>
+      		  by you | <%= link_to "Delete", forumpost, method: :delete,
+                                           data: { confirm: "Are you sure?" },
+                                           title: forumpost.content %>
+      		</span>
+        <% else %>
+        	<a href="<%= user_path(forumpost.user) %>">
+      		</a>
+      		<span>
+      		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Send Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
+      		</span>
+        <% end %>
       <% else %>
-      	<a href="<%= user_path(forumpost.user) %>">
-    		</a>
-    		<span>
-    		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Send Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
-    		</span>
+        by <%= forumpost.user.name %> | <%= link_to "Sign in", :new_user_session %> for profiles and messaging!
       <% end %>
-    <% else %>
-      by <%= forumpost.user.name %> | <%= link_to "Sign in", :new_user_session %> for profiles and messaging!
-    <% end %>
+    </div>
   </div>
-  <br><br>
-  ----------------------------------------------------------------------------------------------
 </li>
