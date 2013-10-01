@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 	  if is_mobile_request?
 	    if request.format == :js
 	      request.format = :mobilejs
-	    else
+	    elsif request.format == :mobilejs
 	      request.format = :mobile
     	end
     end
