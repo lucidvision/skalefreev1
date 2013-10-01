@@ -25,10 +25,10 @@
   <% end %>
   <% if @wall.any? %>
     <h3>Wallposts</h3>
-    <ol class="wall_mobile">
+    <ul style="list-style-type: none;">
       <%= render @wall %>
       <%= paginate @wall %>
-    </ol>
+    </ul>
   <% else %>
     <br><br>
     <h3>Sorry, your search has 0 results.</h3>

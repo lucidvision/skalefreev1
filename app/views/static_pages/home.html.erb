@@ -36,10 +36,10 @@
   <div class="span8">
     <h3 class="f_title">Wallposts</h3>
     <% if @wall.any? %>
-      <ol class="wall_results">
+      <ul class="wall_results">
         <%= render @wall %>
         <%= paginate @wall, :theme => 'twitter-bootstrap' %>
-      </ol>
+      </ul>
     <% else %> 
       <div class="wall_results"><br><br>
         Sorry, your search has 0 results
