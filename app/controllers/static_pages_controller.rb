@@ -9,8 +9,9 @@ class StaticPagesController < ApplicationController
     @wall = @q.result(distinct: true).page(params[:page])
 
     respond_to do |format|
-      format.html 
+      format.mobile
       format.mobilejs
+      format.html 
       format.js
     end 
   end
