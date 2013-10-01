@@ -21,9 +21,10 @@
   <%= render 'shared/wall_form' %>
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
-  <% end %>
+  <% end %><br>
+  <h3 id="wall_selection"></h3>
   <% if @wall.any? %>
-    <h3>Wallposts for </h3><span id="wall_selection"></span>
+    <h3>Wallposts</h3>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
       <%= render @wall %>
       <%= paginate @wall %>
