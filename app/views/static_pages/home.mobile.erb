@@ -19,10 +19,10 @@
     Skalefree<br>
   </div>
   <%= render 'shared/wall_form' %>
+  <h3>You have selected the wall: <span id="wall_selection"></span></h3>
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %><br>
-  <h3 id="wall_selection"></h3>
   <% if @wall.any? %>
     <h3>Wallposts</h3>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
