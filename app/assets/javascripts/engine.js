@@ -16,5 +16,5 @@ function refresh_search()
 	$('#wall').val(x);
 	$('#first').click(setTimeout(function(){
 		$('#second').click();
-	},200));
+	},500));
 }
