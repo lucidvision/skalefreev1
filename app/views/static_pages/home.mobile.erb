@@ -25,14 +25,6 @@
   <% end %>
   <% if @wall.any? %>
     <h3>Wallposts</h3>
-    <ul data-role="listview">
-      <div class="wall_mobile">
-        <%= render @wall %>
-        <%= paginate @wall %>
-      </div>
-    </ul>
-  <% else %>
-    <br><br>
-    <h3>Sorry, your search has 0 results.</h3>
-  <% end %>
+    <div class="wall_mobile">
+    </div>
 </div>

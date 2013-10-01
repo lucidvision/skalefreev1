@@ -1,4 +1,4 @@
-<%= form_for @forumpost do |f| %>
+<%= form_for @forumpost, :remote => true do |f| %>
   <div class="field">
     <%= f.hidden_field :forum, :id => "wallpost" %>
     <%= f.label :content, "Write a Wallpost" %>
