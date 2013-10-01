@@ -1,13 +1,1 @@
-$('.wall_mobile').html("<%= escape_javascript(
-	<% if @wall.any? %>
-		<ul data-role="listview">
-      <div class="wall_mobile">
-        <%= render @wall %>
-        <%= paginate @wall %>
-      </div>
-    </ul>
-  <% else %>
-    <br><br>
-    <h3>Sorry, your search has 0 results.</h3>
-  <% end %>
-) %>");
+$('.wall_mobile').html("<%= escape_javascript(<% if @wall.any? %><ul data-role="listview"><%= render @wall %><%= paginate @wall %></ul><% else %><br><br><h3>Sorry, your search has 0 results.</h3><% end %>) %>");
