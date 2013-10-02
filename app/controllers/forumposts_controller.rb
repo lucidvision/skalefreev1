@@ -1,5 +1,5 @@
 class ForumpostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: :forum
   before_filter :correct_user,   only: :destroy
 
   def create
@@ -16,6 +16,27 @@ class ForumpostsController < ApplicationController
   def destroy
   	@forumpost.destroy
     redirect_to root_path
+  end
+
+  def forum
+    @user = current_user
+    @forumpost = @user.forumposts.build if signed_in?
+    @forumposts = @user.forumposts.page(params[:page]) if signed_in?
+    @q = Forumpost.search(params[:q])
+    @wall = @q.result(distinct: true).page(params[:page])
+    @wallm = @q.result(distinct: true)
+
+    respond_to do |format|
+      format.mobile
+      format.html 
+      format.mobilejs
+      format.js
+    end 
+  end
+
+  def search
+    forum
+    render :forum
   end
 
   private

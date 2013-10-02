@@ -1,9 +1,9 @@
-<%= search_form_for @q, :url => search_static_pages_path,
+<%= search_form_for @q, :url => search_forumposts_path,
                         :html => {:method => :post},
                         :remote => true,
                         builder: Combobox1FormBuilder do |f| %>
   <div class="field">
-    <%= f.label :forum_cont, "Wall (Double Click for Categories)" %>
+    <%= f.label :forum_cont, "Forum (Double Click for Categories)" %>
     <%= f.combobox_tag(:forum_cont, options_for_select(["Confessions", "Funny", "Did You Know", "Games", "News", "Academic", "Social", "SFU", "Sport", "Intellectual", "Entertainment", "WTF", "Music", "Club", "Skalefree"]), :list_id => "list")   %>
   </div>
   <%= f.submit "Select / Refresh", :onclick => "store_search()", :id => "second", class: "btn btn-large btn-primary" %>

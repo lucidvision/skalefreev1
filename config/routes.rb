@@ -20,10 +20,9 @@ Skalefreev1::Application.routes.draw do
       match '/search' => 'findposts#findyou', :via => [:get, :post], :as => :search
     end
   end
-  resources :forumposts, only: [:create, :destroy]
-  resources :static_pages do
+  resources :forumposts, only: [:create, :destroy] do
     collection do
-      match '/search' => 'static_pages#home', :via => [:get, :post], :as => :search
+      match '/search' => 'forumposts#forum', :via => [:get, :post], :as => :search
     end
   end
   resources :conversations, only: [:index, :show, :new, :create] do
@@ -34,13 +33,13 @@ Skalefreev1::Application.routes.draw do
     end
   end
 
-  root to: 'static_pages#home'
-
-  match '/findyou', to: 'findposts#findyou'
+  root to: 'findposts#findyou'
   match '/findme', to: 'findposts#findme'
 
-  match '/wallpost_help', to: 'static_pages#wallpost_help'
-  match '/findpost_help', to: 'static_pages#findpost_help'
+  match '/forum', to: 'forumposts#forum'
+
+  match '/help', to: 'static_pages#help'
+  match '/forum/help', to: 'static_pages#forum_help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 

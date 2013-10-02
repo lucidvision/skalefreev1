@@ -3,8 +3,8 @@ about.jpg: about-0e96d9b43eeee813ab3946611bd06981.jpg
 about/index.jpg: about-0e96d9b43eeee813ab3946611bd06981.jpg
 examples.jpg: examples-62bc05554dc163a08abd0af7d431cdc3.jpg
 examples/index.jpg: examples-62bc05554dc163a08abd0af7d431cdc3.jpg
-help.jpg: help-0e13f6b91bc5a53c72bbaeed4236d21a.jpg
-help/index.jpg: help-0e13f6b91bc5a53c72bbaeed4236d21a.jpg
+help.jpg: help-302924fa25eca7477ee3e5e13b78bdce.jpg
+help/index.jpg: help-302924fa25eca7477ee3e5e13b78bdce.jpg
 icon.jpg: icon-63860ac153335418cf38dd2dadf0263d.jpg
 icon/index.jpg: icon-63860ac153335418cf38dd2dadf0263d.jpg
 like.png: like-5bc40a4a8815094ebcd851b8e6a83a0d.png
@@ -13,10 +13,10 @@ logo.jpg: logo-70f88ab0fedb8dd1ba0804b8e13ec4d7.jpg
 logo/index.jpg: logo-70f88ab0fedb8dd1ba0804b8e13ec4d7.jpg
 rails.png: rails-8bfa14de3679bed8aaf60b68a4f4d1fe.png
 rails/index.png: rails-8bfa14de3679bed8aaf60b68a4f4d1fe.png
-wallhelp.jpg: wallhelp-1274a2b743368c18f6abc841f3a3ece4.jpg
-wallhelp/index.jpg: wallhelp-1274a2b743368c18f6abc841f3a3ece4.jpg
-application.js: application-c3f00cb8f0027a56fa34f9d255dcbd70.js
-application/index.js: application-c3f00cb8f0027a56fa34f9d255dcbd70.js
+wallhelp.jpg: wallhelp-d9c2f82a265b7c1df577539a5b53d64d.jpg
+wallhelp/index.jpg: wallhelp-d9c2f82a265b7c1df577539a5b53d64d.jpg
+application.js: application-9df8686c14f229923ff25e77abf3fdea.js
+application/index.js: application-9df8686c14f229923ff25e77abf3fdea.js
 application.css: application-3fca12117f407c5514e996077d984217.css
 application/index.css: application-3fca12117f407c5514e996077d984217.css
 jquery-mobile/ajax-loader.gif: jquery-mobile/ajax-loader-956f9408f00150200af2c22d1f0399bf.gif

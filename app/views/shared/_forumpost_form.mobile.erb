@@ -1,7 +1,7 @@
 <%= form_for @forumpost, :remote => true do |f| %>
   <div class="field">
     <%= f.hidden_field :forum, :id => "wallpost" %>
-    <%= f.label :content, "Write a Wallpost" %>
+    <%= f.label :content, "Write a post" %>
     <%= f.text_field :content %>
   </div>
   <%= f.submit "Post", :onclick => "refresh_search()", :id => "first" %>

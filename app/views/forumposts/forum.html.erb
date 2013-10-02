@@ -1,4 +1,4 @@
-<% provide(:title, 'Search') %>
+<% provide(:title, 'Forum') %>
 <div class="row">
   <aside class="span4">
     <% if signed_in? %> 
@@ -7,34 +7,24 @@
       </section>
     <% else %>
       <section>
-        <h1>Welcome to SFU Wallposts!</h1> 
+        <h1>Welcome to the Skalefree Forum!</h1> 
         Visit our <%= link_to "about", about_path %> page for more information.<br><br>
         Please <%= link_to "sign up", :new_user_registration%> for access to profiles and messaging.<br><br>
-        Visit <%= link_to "findposts", findyou_path %> to find people.<br><br>
-        Or search for wallposts below.<br><br>
+        Or search the forums below.<br><br>
       <section>
     <% end %>
     <section>
       <%= render 'shared/wall_form' %>
-      <h4>You have selected the wall:<br><br><div id="wall_selection"></div></h4>
+      <h4>You have selected the forum:<br><br><div id="wall_selection"></div></h4>
       <% if signed_in? %> 
         <%= render 'shared/forumpost_form' %>
       <% else %>
-        Please <%= link_to "sign up", :new_user_registration%> to create wallposts!
+        Please <%= link_to "sign up", :new_user_registration%> to create Forum posts!
       <% end %>
-    </section>
-    <section>
-      <p>
-        <b>Website Statistics</b><br>
-        Number of Users: <%= User.all.count %><br>
-        Number of Wallposts: <%= Forumpost.all.count %><br>
-        Number of Findposts: <%= Findpost.all.count %><br>
-        Number of Messages: <%= Message.all.count %><br>
-      </p>
     </section>
   </aside>
   <div class="span8">
-    <h3 class="f_title">Wallposts</h3>
+    <h3 class="f_title">Forum</h3>
     <% if @wall.any? %>
       <ul class="wall_results">
         <%= render @wall %>
