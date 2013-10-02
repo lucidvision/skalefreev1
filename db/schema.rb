@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130929202947) do
+ActiveRecord::Schema.define(:version => 20131002025725) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(:version => 20130929202947) do
 
   create_table "forumposts", :force => true do |t|
     t.string   "forum"
-    t.string   "content"
+    t.text     "content",    :limit => 255
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   add_index "forumposts", ["user_id", "created_at"], :name => "index_forumposts_on_user_id_and_created_at"
