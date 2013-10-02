@@ -15,7 +15,7 @@ class ForumpostsController < ApplicationController
 
   def destroy
   	@forumpost.destroy
-    redirect_to root_path
+    redirect_to forum_path
   end
 
   def forum
