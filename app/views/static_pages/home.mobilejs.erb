@@ -1,2 +1,3 @@
 $('.wall_mobile').html("<%= escape_javascript(render @wall) %>");
+$('#paginator').html('<%= escape_javascript(paginate(@wall, :remote => true).to_s) %>');
 $("#mobile_refresh").listview("refresh");

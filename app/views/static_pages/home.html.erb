@@ -38,12 +38,14 @@
     <% if @wall.any? %>
       <ul class="wall_results">
         <%= render @wall %>
-        <%= paginate @wall, :theme => 'twitter-bootstrap' %>
       </ul>
     <% else %> 
       <div class="wall_results"><br><br>
         Sorry, your search has 0 results
       </div>
     <% end %>
+  </div>
+  <div id="paginator">
+    <%= paginate @wall, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>  

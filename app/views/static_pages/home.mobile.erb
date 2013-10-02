@@ -27,10 +27,12 @@
   <% if @wall.any? %>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
       <%= render @wall %>
-      <%= paginate @wall %>
     </ul>
   <% else %>
     <br><br>
     <h3>Sorry, your search has 0 results.</h3>
   <% end %>
+  <div id="paginator">
+    <%= paginate @wall, :theme => 'twitter-bootstrap', :remote => true %>
+  </div>
 </div>
