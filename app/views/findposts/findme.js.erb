@@ -1,1 +1,2 @@
 $('.findposts').html("<%= escape_javascript(render @findposts) %>");
+$('#paginatorf').html('<%= escape_javascript(paginate(@findposts, :remote => true).to_s) %>');

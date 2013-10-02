@@ -27,8 +27,10 @@
       <h3 class="f_title">Create Findposts</h3>
       <ol class="findposts">
         <%= render @findposts %>
-        <%= paginate @findposts, :theme => 'twitter-bootstrap' %>
       </ol>
     <% end %>
+  </div>
+  <div id="paginatorf">
+    <%= paginate @findposts, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>

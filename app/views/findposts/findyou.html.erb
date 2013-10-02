@@ -45,12 +45,14 @@
     <% if @results.any? %>
       <ol class="results">
         <%= render @results %>
-        <%= paginate @results, :theme => 'twitter-bootstrap' %>
       </ol>
     <% else %> 
       <div class="results"><br><br>
         Sorry, your search has 0 results
       </div>
     <% end %>
+  </div>
+  <div id="paginatorr">
+    <%= paginate @results, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>  

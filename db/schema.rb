@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131002025725) do
+ActiveRecord::Schema.define(:version => 20131002183507) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(:version => 20131002025725) do
     t.string   "philosophy"
     t.string   "interests"
     t.string   "personality"
-    t.string   "about"
+    t.text     "about",       :limit => 255
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "receipts", :force => true do |t|
