@@ -23,7 +23,7 @@
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %><br>
-  <h3>Forum</h3>
+  <h3>Forumposts</h3>
   <% if @wall.any? %>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
       <%= render @wallm %>
