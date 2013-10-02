@@ -195,8 +195,9 @@ input {
 
 .wall_post {
   width: 530px;
-  height: 120px;
-  word-wrap: break-word;
+  height: 100px;
+  word-wrap:break-word;
+  overflow: auto;
 }
 
 #wall_selection {

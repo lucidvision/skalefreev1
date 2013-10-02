@@ -2,7 +2,7 @@ class Forumpost < ActiveRecord::Base
   attr_accessible :content, :forum
   belongs_to :user
 
-  validates :content, presence: true, length: { maximum: 491 }
+  validates :content, presence: true, length: { maximum: 10000 }
   validates :forum, presence: true, length: { maximum: 40 }
   validates :user_id, presence: true
   
