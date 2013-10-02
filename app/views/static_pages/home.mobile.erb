@@ -26,13 +26,10 @@
   <h3>Wallposts</h3>
   <% if @wall.any? %>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
-      <%= render @wall %>
+      <%= render @wallm %>
     </ul>
   <% else %>
     <br><br>
     <h3>Sorry, your search has 0 results.</h3>
   <% end %>
-</div>
-<div id="paginatorm">
-  <%= paginate @wall, :remote => true %>
 </div>

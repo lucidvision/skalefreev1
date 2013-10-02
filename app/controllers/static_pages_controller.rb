@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
     @forumposts = @user.forumposts.page(params[:page]) if signed_in?
     @q = Forumpost.search(params[:q])
     @wall = @q.result(distinct: true).page(params[:page])
+    @wallm = @q.result(distinct: true)
 
     respond_to do |format|
       format.mobile

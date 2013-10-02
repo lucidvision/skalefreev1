@@ -1,3 +1,2 @@
-$('.wall_mobile').html("<%= escape_javascript(render @wall) %>");
-$('#paginatorm').html('<%= escape_javascript(paginate(@wall, :remote => true).to_s) %>');
+$('.wall_mobile').html("<%= escape_javascript(render @wallm) %>");
 $("#mobile_refresh").listview("refresh");
