@@ -24,7 +24,7 @@
     		</span>
       <% end %>
     <% else %>
-      by <%= findpost.user.name %> | <%= link_to "Sign in", :new_user_session %> for profiles and messaging!
+      by <%= findpost.user.name %> | Please <%= link_to "Sign in", :new_user_session %>.
     <% end %>
   </div>
 </li>

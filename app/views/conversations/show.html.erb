@@ -1,6 +1,6 @@
 <h1><%= conversation.subject %></h1>
 <ul>
-  <%= content_tag_for(:li, conversation.messages) do |receipt| %>
+  <%= content_tag_for(:li, conversation.messages.reverse) do |receipt| %>
 	  <div class="m_info">
 	    <h5><%= link_to receipt.sender.name, receipt.sender %></h5>
 	    <p><%= receipt.body %></p>

@@ -20,7 +20,7 @@
     		</span>
       <% end %>
     <% else %>
-      by <%= forumpost.user.name %> | <%= link_to "Sign in", :new_user_session %> for profiles and messaging!
+      by <%= forumpost.user.name %> | Please <%= link_to "Sign in", :new_user_session %>.
     <% end %>
   </div>
 </li>

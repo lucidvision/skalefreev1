@@ -1,6 +1,6 @@
 <h3><%= conversation.subject %></h3>
 <ul data-role="listview">
-  <%= content_tag_for(:li, conversation.messages) do |receipt| %>
+  <%= content_tag_for(:li, conversation.messages.reverse) do |receipt| %>
     <h5><%= link_to receipt.sender.name, receipt.sender %></h5>
     <p style="white-space: normal"><%= receipt.body %></p>
     <h6>Posted <%= time_ago_in_words(receipt.created_at) %> ago</h6>
