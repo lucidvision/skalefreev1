@@ -1,3 +1,4 @@
+<% provide(:title, 'Conversation') %>
 <h3><%= conversation.subject %></h3>
 <ul data-role="listview">
   <%= content_tag_for(:li, conversation.messages.reverse) do |receipt| %>
