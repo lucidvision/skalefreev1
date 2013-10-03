@@ -3,7 +3,7 @@
 		<% if signed_in? %>
 			<li><%= link_to "Create", findme_path %></li>
 		<% end %>	
-			<li><%= link_to "Forum", forum_path %></li>
+			<li><%= link_to "Wall", forum_path %></li>
 		<% if signed_in? %>
 			<li><%= link_to @unread_count + " Mail", conversations_path %></li>
 			<li><%= link_to "Profile", current_user %></li>

@@ -1,4 +1,4 @@
-<% provide(:title, 'Forum') %>
+<% provide(:title, 'Wall') %>
 <div data-role="content">
   <div data-role="collapsible">
     <h3>Categories</h3>
@@ -19,7 +19,7 @@
     Skalefree<br>
   </div>
   <%= render 'shared/wall_form' %>
-  <h3>You have selected the forum: <span id="wall_selection"></span></h3>
+  <h3>You have selected the wall: <span id="wall_selection"></span></h3>
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %><br>

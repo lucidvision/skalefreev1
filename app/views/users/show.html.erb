@@ -4,7 +4,7 @@
         <section>
             <h1><%= @user.name %></h1>
             <%= pluralize(@user.findposts.count, "findpost") %><br>
-            <%= pluralize(@user.forumposts.count, "forumpost") %><br>
+            <%= pluralize(@user.forumposts.count, "wallpost") %><br>
             <% if @user == current_user %>
             	<%= link_to "Edit Profile", edit_profile_path(@user) %>
             <% end %>
