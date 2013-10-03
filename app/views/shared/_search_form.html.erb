@@ -3,7 +3,7 @@
                         :remote => true,
                         builder: Combobox1FormBuilder do |s| %>
   <div class="field">
-    <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Subject (Double Click for Categories)" %>
+    <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Search Keyword" %>
     <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %><br><br>
     <input type="button" class="btn btn-success" data-toggle="collapse" data-target="#criteria" value="Add Criteria to Narrow your Results">
     <div id="criteria" class="collapse out">
