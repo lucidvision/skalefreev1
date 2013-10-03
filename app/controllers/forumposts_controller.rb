@@ -5,17 +5,15 @@ class ForumpostsController < ApplicationController
   def create
   	@forumpost = current_user.forumposts.build(params[:forumpost])
     if @forumpost.save
-      flash[:success] = "Wallpost created!"
       redirect_to search_static_pages_path
     else
-      flash[:error] = "Error creating your Wallpost!"
       redirect_to search_static_pages_path
     end
   end
 
   def destroy
   	@forumpost.destroy
-    redirect_to forum_path
+    redirect_to wall_path
   end
 
   def forum
