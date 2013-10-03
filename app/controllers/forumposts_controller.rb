@@ -5,9 +5,9 @@ class ForumpostsController < ApplicationController
   def create
   	@forumpost = current_user.forumposts.build(params[:forumpost])
     if @forumpost.save
-      redirect_to search_path
+      redirect_to search_static_pages_path
     else
-      redirect_to search_path
+      redirect_to search_static_pages_path
     end
   end
 
