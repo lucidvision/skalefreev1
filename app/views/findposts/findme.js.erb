@@ -1,2 +1,2 @@
 $('.findposts').html("<%= escape_javascript(render @findposts) %>");
-$('#paginatorf').html('<%= escape_javascript(paginate(@findposts, :remote => true).to_s) %>');
+$('#paginatorf').html('<%= escape_javascript(paginate(@findposts, :theme => 'twitter-bootstrap', :remote => true).to_s) %>');
