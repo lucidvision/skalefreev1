@@ -36,10 +36,10 @@ Skalefreev1::Application.routes.draw do
   root to: 'findposts#findyou'
   match '/findme', to: 'findposts#findme'
 
-  match '/forum', to: 'forumposts#forum'
+  match '/wall', to: 'forumposts#forum'
 
   match '/help', to: 'static_pages#help'
-  match '/forum/help', to: 'static_pages#forum_help'
+  match '/wall/help', to: 'static_pages#wall_help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
