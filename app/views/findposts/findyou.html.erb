@@ -9,7 +9,7 @@
       <section>
         <h1>Welcome to Skalefree @ SFU!</h1> 
         Visit our <%= link_to "about", about_path %> page for more information.<br><br>
-        Please <%= link_to "sign up", :new_user_registration%> for access to profiles, messaging, and more.<br><br>
+        Please <%= link_to "sign up", :new_user_registration%> to create findposts, access profiles, and send messages.<br><br>
         Or search for people below.<br><br>
       <section>
     <% end %>
@@ -42,15 +42,9 @@
   </aside>
   <div class="span8">
     <h3 class="f_title">Search Findposts</h3>
-    <% if @results.any? %>
-      <ol class="results">
-        <%= render @results %>
-      </ol>
-    <% else %> 
-      <div class="results"><br><br>
-        Sorry, your search has 0 results
-      </div>
-    <% end %>
+    <ol class="results">
+      <%= render @results %>
+    </ol>
   </div>
   <div id="paginatorr">
     <%= paginate @results, :theme => 'twitter-bootstrap', :remote => true %>

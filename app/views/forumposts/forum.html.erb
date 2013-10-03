@@ -9,7 +9,7 @@
       <section>
         <h1>Welcome to the Skalefree Forum!</h1> 
         Visit our <%= link_to "about", about_path %> page for more information.<br><br>
-        Please <%= link_to "sign up", :new_user_registration%> for access to profiles, messaging, and more.<br><br>
+        Please <%= link_to "sign up", :new_user_registration%> to create forumposts, access profiles, and message users.<br><br>
         Or search for forums below.<br><br>
       <section>
     <% end %>
@@ -23,17 +23,9 @@
   </aside>
   <div class="span8">
     <h3 class="f_title">Forumposts</h3>
-    <% if @wall.any? %>
-      <ul class="wall_results">
-        <%= render @wall %>
-      </ul>
-    <% else %> 
-      <div class="wall_results"><br><br>
-        Sorry, your search has 0 results
-      </div>
-    <% end %>
+    <ul class="wall_results">
+    </ul>
   </div>
   <div id="paginator">
-    <%= paginate @wall, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>  
