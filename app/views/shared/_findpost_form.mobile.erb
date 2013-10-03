@@ -1,7 +1,7 @@
 <%= form_for @findpost do |f| %>
   <div class="field">
   	<%= f.label "Subject" %>
-    <%= f.text_field :c1 %>
+    <%= f.text_field :c1, :placeholder => "Or Choose a Category"%>
     <%= f.label "Criteria 1" %>
     <%= f.text_field :c2 %>
     <%= f.label "Criteria 2" %>
