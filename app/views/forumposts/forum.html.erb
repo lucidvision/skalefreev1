@@ -24,8 +24,10 @@
   <div class="span8">
     <h3 class="f_title">Forumposts</h3>
     <ul class="wall_results">
+      <%= render @wall %>
     </ul>
   </div>
   <div id="paginator">
+    <%= paginate @wall, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>  
