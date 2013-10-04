@@ -2,7 +2,6 @@
 <div class="row">
     <aside class="span4">
         <section>
-            <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary", style: "float: right;" %>
             <h1><%= @user.name %></h1>
             <%= pluralize(@user.findposts.count, "findpost") %><br>
             <%= pluralize(@user.forumposts.count, "wallpost") %><br>
@@ -11,6 +10,7 @@
             <% end %>
             <br>
             <strong>Reputation: </strong><%= @user.reputation_for(:votes).to_i %>
+            <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary", style: "float: right;" %>
             <br>
             <%= link_to "Up", vote_user_path(@user, type: "up"), method: "post" %>
             | <%= link_to "Down", vote_user_path(@user, type: "down"), method: "post" %>
