@@ -4,14 +4,14 @@ class Profile < ActiveRecord::Base
   attr_accessible :age, :education, :gender, :interests, :location, :personality, :philosophy, :work, :about
 
   validates :user_id, presence: true
-  validates :age, length: { maximum: 400 }
-  validates :education, length: { maximum: 76 }
-  validates :gender, length: { maximum: 76 }
-  validates :interests, length: { maximum: 76 }
-  validates :location, length: { maximum: 76 }
-  validates :personality, length: { maximum: 76 }
-  validates :philosophy, length: { maximum: 76 }
-  validates :work, length: { maximum: 76 }
+  validates :age, length: { maximum: 152 }
+  validates :education, length: { maximum: 152 }
+  validates :gender, length: { maximum: 152 }
+  validates :interests, length: { maximum: 152 }
+  validates :location, length: { maximum: 152 }
+  validates :personality, length: { maximum: 152 }
+  validates :philosophy, length: { maximum: 152 }
+  validates :work, length: { maximum: 152 }
   validates :about, length: { maximum: 556 }
 
 end
