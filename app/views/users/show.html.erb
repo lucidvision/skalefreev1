@@ -2,6 +2,7 @@
 <div class="row">
     <aside class="span4">
         <section>
+            <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary", style: "float: right;" %>
             <h1><%= @user.name %></h1>
             <%= pluralize(@user.findposts.count, "findpost") %><br>
             <%= pluralize(@user.forumposts.count, "wallpost") %><br>
@@ -23,6 +24,16 @@
             <b>Additional Information:</b> <br><br>
             <%= @profile.about %>
         </div>
+
     </aside>
-    <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary" %>
+    <div class="span8">
+    <% if @user.forumposts.any? %>
+      <h3 class="f_title"><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
+      <ol class="findposts">
+        <%= render @forumposts %>
+      </ol>
+    <% end %>
+  </div>
+    <%= paginate @forumposts, :theme => 'twitter-bootstrap' %>
+  </div>
 </div>

@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.profile ||= Profile.new
     @profile = @user.profile
+    @forumpost = @user.forumposts.build if signed_in?
+    @forumposts = @user.forumposts.page(params[:page])
   end
 
   def index
