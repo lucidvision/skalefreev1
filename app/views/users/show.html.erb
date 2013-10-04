@@ -27,13 +27,15 @@
 
     </aside>
     <div class="span8">
-    <% if @user.forumposts.any? %>
-      <h3 class="f_title"><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
-      <ol class="findposts">
-        <%= render @forumposts %>
-      </ol>
-    <% end %>
-  </div>
-    <%= paginate @forumposts, :theme => 'twitter-bootstrap' %>
+        <% if @user.forumposts.any? %>
+          <h3 class="f_title"><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
+          <ol class="findposts">
+            <%= render @forumposts %>
+          </ol>
+        <% end %>
+    </div>
+    <div id="paginatorp">
+        <%= paginate @forumposts, :theme => 'twitter-bootstrap' %>
+    </div>
   </div>
 </div>

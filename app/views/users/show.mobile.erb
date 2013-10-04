@@ -20,7 +20,7 @@
     <%= render 'shared/profile' %>
 </ul>
 <% if @user.forumposts.any? %>
-  <h3><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
+  <h2><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h2>
   <ul data-role="listview">
     <%= render @forumposts %>
     <%= paginate @forumposts %>
