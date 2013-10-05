@@ -1,0 +1,2 @@
+$('.profileposts').html("<%= escape_javascript(render @forumposts) %>");
+$('#paginatorp2').html('<%= escape_javascript(paginate(@forumposts, :theme => 'twitter-bootstrap', :remote => true).to_s) %>');

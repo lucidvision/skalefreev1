@@ -7,8 +7,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.profile ||= Profile.new
     @profile = @user.profile
+    @findpost = @user.findposts.build if signed_in?
+    @findposts = @user.findposts.page(params[:page]).per_page(4)
     @forumpost = @user.forumposts.build if signed_in?
-    @forumposts = @user.forumposts.page(params[:page])
+    @forumposts = @user.forumposts.page(params[:page]).per_page(10)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end 
   end
 
   def index
