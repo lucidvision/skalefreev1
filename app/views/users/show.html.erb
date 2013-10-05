@@ -28,7 +28,7 @@
     <div class="span8">
         <div style="float:right;">
             <% if @user.findposts.any? %>
-              <h3 class="f_title"><%= @user.name %>'s Findposts (<%= @user.findposts.count %>)</h3>
+              <h3 class="f_title">Findposts</h3>
               <ol class="findposts">
                 <%= render @findposts %>
               </ol>
@@ -39,7 +39,7 @@
         </div>
         <div style="float:right;">
             <% if @user.forumposts.any? %>
-              <h3 class="f_title"><br><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
+              <h3 class="f_title"><br>Wallposts</h3>
               <ol class="profileposts">
                 <%= render @forumposts %>
               </ol>
