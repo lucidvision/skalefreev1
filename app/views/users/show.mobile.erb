@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
-<h3>Reputation: <%= @user.reputation_for(:votes).to_i %></h3>
+<span>Reputation: <%= @user.reputation_for(:votes).to_i %></span>
 <div data-role="controlgroup" data-type="horizontal"  data-mini="true">
 	<%= link_to "Up", vote_user_path(@user, type: "up"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
 	<%= link_to "Down", vote_user_path(@user, type: "down"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
@@ -20,7 +20,7 @@
 <% if @user.findposts.any? %>
   <h2>Findposts (<%= @user.findposts.count %>)</h2>
   <ul data-role="listview">
-    <%= render @findposts %>
+    <%= render @findpostsm %>
   </ul>
 <% end %>
 <% if @user.forumposts.any? %>
