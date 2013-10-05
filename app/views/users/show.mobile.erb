@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
-<span>Reputation: <%= @user.reputation_for(:votes).to_i %></span>
+<span style="font-size:130%"><b>Reputation: <%= @user.reputation_for(:votes).to_i %></b></span>
 <div data-role="controlgroup" data-type="horizontal"  data-mini="true">
 	<%= link_to "Up", vote_user_path(@user, type: "up"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
 	<%= link_to "Down", vote_user_path(@user, type: "down"), method: "post", :'data-role' => 'button', :'data-inline' => "true" %>
