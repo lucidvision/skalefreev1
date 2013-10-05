@@ -24,7 +24,6 @@
             <b>Additional Information:</b> <br><br>
             <%= @profile.about %>
         </div>
-
     </aside>
     <div class="span8">
         <div style="float:right;">
@@ -40,7 +39,7 @@
         </div>
         <div style="float:right;">
             <% if @user.forumposts.any? %>
-              <h3 class="f_title"><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
+              <h3 class="f_title"><br><%= @user.name %>'s Wallposts (<%= @user.forumposts.count %>)</h3>
               <ol class="profileposts">
                 <%= render @forumposts %>
               </ol>
