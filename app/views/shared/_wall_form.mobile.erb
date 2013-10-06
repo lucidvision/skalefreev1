@@ -3,7 +3,7 @@
                         :remote => true do |f| %>
   <div class="field">
     <%= f.label :forum_cont, "Create or Find a Wall" %>
-    <%= f.text_field :forum_cont, :id => "wall", :placeholder => "Choose a Category"%>
+    <%= f.text_field :forum_cont, :id => "wall", :placeholder => "Or Enter a Category"%>
   </div>
   <%= f.submit "Select / Refresh", :onclick => "store_search()", :id => "second" %>
 <% end %>
