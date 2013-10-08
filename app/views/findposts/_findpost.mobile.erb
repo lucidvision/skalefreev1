@@ -20,7 +20,7 @@
       	<a href="<%= user_path(findpost.user) %>">
     		</a>
     		<span>
-    		  by <%= link_to findpost.user.name, findpost.user %> | Rep: <%= findpost.user.reputation_for(:votes).to_i %> | <%= link_to "Send Message", new_conversation_path( target: findpost.user.name, reason: findpost.c1 ) %>
+    		  by <%= link_to findpost.user.name, findpost.user %> | Rep: <%= findpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: findpost.user.name, reason: findpost.c1 ) %>
     		</span>
       <% end %>
     <% else %>
