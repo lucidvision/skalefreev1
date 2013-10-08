@@ -188,6 +188,8 @@ Devise.setup do |config|
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
   # config.token_authentication_key = :auth_token
+  config.allow_insecure_token_lookup = true
+  config.allow_insecure_sign_in_after_confirmation = true
 
   # ==> Scopes configuration
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
