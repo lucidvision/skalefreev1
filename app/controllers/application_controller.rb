@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :unread
   before_filter :set_request_format
-  before_filter :after_sign_in_path_for
 
   def unread
   	if signed_in?
@@ -22,9 +21,5 @@ class ApplicationController < ActionController::Base
 	      request.format = :mobile
     	end
     end
-  end
-
-  def after_sign_in_path_for(current_user)
-    root_path
   end
 end
