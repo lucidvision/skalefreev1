@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :unread
   before_filter :set_request_format
+  before_filter :after_sign_in_path_for
 
   def unread
   	if signed_in?
