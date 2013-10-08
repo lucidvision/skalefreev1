@@ -30,7 +30,7 @@ private
   # via parameters. However, anyone could use Rails's token
   # authentication features to get the token from a header.
   def authenticate_user_from_token!
-    user_token = params[:user_token].presence
+    user_token = params[:authentication_key].presence
     user       = user_token && User.find_by_authentication_token(user_token)
  
     if user
@@ -41,6 +41,6 @@ private
       sign_in user, store: false
     end
   end
-  
+
 end
 
