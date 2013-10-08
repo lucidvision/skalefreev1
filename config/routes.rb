@@ -9,7 +9,7 @@ Skalefreev1::Application.routes.draw do
     as: :user_registration do
       get :cancel
     end
-    get "password", :to => 'findposts#findyou'
+    match "/password", :to => 'findposts#findyou', :via => :get
   end
   resources :users do
     member { post :vote }
