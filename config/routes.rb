@@ -9,6 +9,7 @@ Skalefreev1::Application.routes.draw do
     as: :user_registration do
       get :cancel
     end
+    get "password", :to => 'findposts#findyou'
   end
   resources :users do
     member { post :vote }
