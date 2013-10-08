@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
   before_save :ensure_authentication_token
 
   acts_as_messageable
