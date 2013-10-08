@@ -1,5 +1,5 @@
 Skalefreev1::Application.routes.draw do
-  devise_for :users, skip: :registrations
+  devise_for :users, skip: :registrations, :token_authentication_key => 'authentication_key'
   devise_scope :user do
     resource :registration,
     only: [:new, :create, :edit, :update],
