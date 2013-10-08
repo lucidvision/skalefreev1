@@ -32,6 +32,7 @@ Devise.setup do |config|
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
   config.secret_key = '36225813e4ff07240771f1764bc89407fa25450f6bac7921ddedd4a9d633ceb91f33f4f35ea8ef41abb209f7b8e54c1416a6da673a8f007f573c99f44104bdd3'
+  config.allow_insecure_sign_in_after_confirmation = true
   config.allow_insecure_token_lookup = true
 
   # Configure which authentication keys should be case-insensitive.
