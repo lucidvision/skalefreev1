@@ -3,16 +3,19 @@
   <div class="field">
     <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Search Keyword" %>
     <%= s.text_field :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, :placeholder => "Or Enter a Category"%>
-    <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, "Criteria 1" %>
-    <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
-    <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>
-    <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont %>
-    <%= s.label :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, "Criteria 3" %>
-    <%= s.text_field :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont %>
-    <%= s.label :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont, "Criteria 4" %>
-    <%= s.text_field :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont %>
-    <%= s.label :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont, "Criteria 5" %>
-    <%= s.text_field :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont %>
+    <div data-role="collapsible">
+        <h3>Add Criteria</h3>
+        <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, "Criteria 1" %>
+        <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
+        <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>
+        <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont %>
+        <%= s.label :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, "Criteria 3" %>
+        <%= s.text_field :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont %>
+        <%= s.label :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont, "Criteria 4" %>
+        <%= s.text_field :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont %>
+        <%= s.label :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont, "Criteria 5" %>
+        <%= s.text_field :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont %>
+    </div>
   </div>
   <%= s.submit "Search" %>
 <% end %>
