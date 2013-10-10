@@ -38,7 +38,6 @@ class ForumpostsController < ApplicationController
   end
 
   private
-
     def correct_user
       @forumpost = current_user.forumposts.find_by_id(params[:id])
       redirect_to root_path if @forumpost.nil?

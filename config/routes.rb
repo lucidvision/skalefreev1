@@ -33,7 +33,8 @@ Skalefreev1::Application.routes.draw do
     end
   end
 
-  root to: 'findposts#findyou'
+  root to: 'static_pages#home'
+  match '/findyou', to: 'findposts#findyou'
   match '/findme', to: 'findposts#findme'
 
   match '/wall', to: 'forumposts#forum'

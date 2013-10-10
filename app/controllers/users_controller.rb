@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: [:index, :active]
 
 	def show
@@ -46,11 +45,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
-    end
 
     def admin_user
       redirect_to(root_url) unless current_user.admin?

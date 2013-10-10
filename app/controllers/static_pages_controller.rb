@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   before_filter :authenticate_user!, only: :findme
 
+  def home
+  end
+
   def findpost_help
   end
 
