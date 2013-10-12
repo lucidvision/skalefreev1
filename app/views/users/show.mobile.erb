@@ -17,3 +17,16 @@
 <ul data-role="listview">
     <%= render 'shared/profile' %>
 </ul>
+<% if @user.findposts.any? %>
+  <h2>Findposts (<%= @user.findposts.count %>)</h2>
+  <ul data-role="listview">
+    <%= render @findposts %>
+  </ul>
+<% end %>
+<% if @user.forumposts.any? %>
+  <h2>Wallposts (<%= @user.forumposts.count %>)</h2>
+  <ul data-role="listview">
+    <%= render @forumposts %>
+    <%= paginate @forumposts %>
+  </ul>
+<% end %>
