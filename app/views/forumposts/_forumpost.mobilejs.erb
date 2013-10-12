@@ -1,6 +1,6 @@
 <li>
   <span class="id"><%= forumpost.forum %></span>
-  <%= if signed_in? %>
+  <% if signed_in? %>
     <span style="float:right;"><%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %> 
     <span class="post-<%=forumpost.id%>"><%=forumpost.reputation_for(:votes).to_i %></span><br>
     </span>
