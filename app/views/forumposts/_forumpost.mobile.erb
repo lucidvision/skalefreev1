@@ -25,7 +25,7 @@
       	<a href="<%= user_path(forumpost.user) %>">
     		</a>
     		<span>
-    		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %> | <%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %> <span class="post-<%=forumpost.id%>"><%=forumpost.reputation_for(:votes).to_i %></span>
+    		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
     		</span>
       <% end %>
     <% else %>
