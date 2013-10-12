@@ -11,7 +11,7 @@
       </span>
     </div>
   </div><br>
-  <span class="c1"><%= auto_link(simple_format(forumpost.content)) %></span><br>
+  <span class="c1"><%= auto_link(forumpost.content) %></span><br>
   <div class="f_info">
     <span>
       Posted <%= time_ago_in_words(forumpost.created_at) %> ago
