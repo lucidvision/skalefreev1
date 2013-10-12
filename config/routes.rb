@@ -10,21 +10,27 @@ Skalefreev1::Application.routes.draw do
       get :cancel
     end
   end
+
   resources :users do
     member { post :vote }
     member { put :active }
   end
+
   resources :profile
+
   resources :findposts, only: [:create, :destroy] do
     collection do
       match '/search' => 'findposts#findyou', :via => [:get, :post], :as => :search
     end
   end
+
   resources :forumposts, only: [:create, :destroy] do
     collection do
       match '/search' => 'forumposts#forum', :via => [:get, :post], :as => :search
     end
+    member { post :vote }
   end
+
   resources :conversations, only: [:index, :show, :new, :create] do
     member do
       post :reply

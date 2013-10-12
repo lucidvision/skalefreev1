@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  require 'rails_autolink'
 	include Mobylette::RespondToMobileRequests
   protect_from_forgery
   before_filter :unread

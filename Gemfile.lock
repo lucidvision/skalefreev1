@@ -167,6 +167,8 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails_autolink (1.1.4)
+      rails (> 3.1)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -274,6 +276,7 @@ DEPENDENCIES
   mobylette
   pg (= 0.12.2)
   rails (= 3.2.13)
+  rails_autolink
   rake
   ransack
   rb-inotify (= 0.9)

@@ -23,6 +23,7 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'mobylette'
 gem 'jquery_mobile_rails'
 gem 'jquery-turbolinks'
+gem 'rails_autolink'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

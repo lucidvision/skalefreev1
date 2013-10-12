@@ -37,6 +37,19 @@ class ForumpostsController < ApplicationController
     render :forum
   end
 
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @forumpost1 = Forumpost.find(params[:id])
+    @forumpost1.add_or_update_evaluation(:votes, value, current_user)
+
+    respond_to do |format|
+      format.mobile {redirect_to :back}
+      format.html {redirect_to :back}
+      format.mobilejs
+      format.js
+    end 
+  end
+
   private
     def correct_user
       @forumpost = current_user.forumposts.find_by_id(params[:id])

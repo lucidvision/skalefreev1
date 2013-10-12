@@ -1,6 +1,17 @@
 <li>
-  <span class="id"><%= forumpost.forum %></span>
-  <div class="wall_post"><%= forumpost.content %></div>
+  <div class="id"><%= forumpost.forum %>
+    <div style="float:right;">
+      <% if signed_in? %>
+        <%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %>
+      <% else %>
+        Likes:
+      <% end %>
+      <span class="post-<%=forumpost.id%>">
+        <%=forumpost.reputation_for(:votes).to_i %>
+      </span>
+    </div>
+  </div>
+  <div class="wall_post"><%= auto_link(simple_format(forumpost.content)) %></div>
   <div class="f_info">
     <span>
       Posted <%= time_ago_in_words(forumpost.created_at) %> ago

@@ -22,7 +22,7 @@
         </div>
         <div id="about">
             <b>Additional Information:</b> <br><br>
-            <%= @profile.about %><br><br>
+            <%= auto_link(simple_format(@profile.about)) %><br><br>
         </div>
     </aside>
     <div class="span8">
