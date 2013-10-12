@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @profile = @user.profile
     @findpost = @user.findposts.build if signed_in?
     @findposts = @user.findposts.page(params[:page]).per_page(4)
+    @findpostsm = @user.findposts.all
     @forumpost = @user.forumposts.build if signed_in?
     @forumposts = @user.forumposts.page(params[:page]).per_page(10)
 
