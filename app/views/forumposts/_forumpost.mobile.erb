@@ -1,12 +1,18 @@
 <li>
   <span class="id"><%= forumpost.forum %></span>
   <% if signed_in? %>
-    <span style="float:right;"><%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %> 
-    <span class="post-<%=forumpost.id%>"><%=forumpost.reputation_for(:votes).to_i %></span><br>
+    <span style="float:right;">
+      <%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %> 
+      <span class="post-<%=forumpost.id%>">
+        <%=forumpost.reputation_for(:votes).to_i %>
+      </span><br>
     </span>
   <% else %>
-    <span style="float:right;">Likes:</span>
-    <span class="post-<%=forumpost.id%>"><%=forumpost.reputation_for(:votes).to_i %></span>
+    <span style="float:right;">Likes:
+      <span class="post-<%=forumpost.id%>">
+        <%=forumpost.reputation_for(:votes).to_i %>
+      </span>
+    </span>
   <% end %>
   <br>
   <span class="c1"><%= auto_link(forumpost.content) %></span><br>
@@ -16,17 +22,17 @@
     </span>
     <% if signed_in? %>
       <% if current_user == forumpost.user %>
-      	<span>
-    		  by you | <%= link_to "Delete", forumpost, method: :delete,
+        <span>
+          by you | <%= link_to "Delete", forumpost, method: :delete,
                                          data: { confirm: "Are you sure?" },
                                          title: forumpost.content %> 
-    		</span>
+        </span>
       <% else %>
-      	<a href="<%= user_path(forumpost.user) %>">
-    		</a>
-    		<span>
-    		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
-    		</span>
+        <a href="<%= user_path(forumpost.user) %>">
+        </a>
+        <span>
+          by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
+        </span>
       <% end %>
     <% else %>
       by <%= forumpost.user.name %> | Please <%= link_to "sign in", :new_user_session %>
