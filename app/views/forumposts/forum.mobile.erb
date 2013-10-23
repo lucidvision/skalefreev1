@@ -1,24 +1,5 @@
 <% provide(:title, 'Wall') %>
 <div data-role="content">
-  <div data-role="collapsible">
-    <h3>Categories</h3>
-    Random Thought<br>
-    Confession<br>
-    Funny<br>
-    Did You Know<br>
-    Games<br>
-    News<br>
-    Academic<br>
-    Social<br>
-    SFU<br>
-    Sport<br>
-    Intellectual<br>
-    Entertainment<br>
-    WTF<br>
-    Music<br>
-    Club<br>
-    Skalefree<br>
-  </div>
   <%= render 'shared/wall_form' %>
   <h3>You have selected the wall: <span id="wall_selection"></span></h3>
   <% if signed_in? %> 
