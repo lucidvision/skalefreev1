@@ -1,5 +1,5 @@
 <li>
-  <div class="id"><%= forumpost.forum %>
+  <div class="id">Wall: <%= forumpost.forum %>
     <div style="float:right;">
       <% if signed_in? %>
         <%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %>

@@ -1,8 +1,6 @@
 <% provide(:title, 'Create') %>
 <div data-role="content">
-		<h3>Create</h3>
-    <%= render 'shared/findpost_form' %>
-	</div>
+  <%= render 'shared/findpost_form' %>
 	<% if @user.findposts.any? %>
     <h3>Create Findposts (<%= @user.findposts.count %>)</h3>
     <ul data-role="listview">
