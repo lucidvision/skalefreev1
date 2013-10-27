@@ -1,10 +1,10 @@
 <li>
-  <span class="id"><%= findpost.c1 %></span>
-  <span class="c1"><%= findpost.c2 %></span>
-  <span class="c1"><%= findpost.c3 %></span>
-  <span class="c1"><%= findpost.c4 %></span>
-  <span class="c1"><%= findpost.c5 %></span>
-  <span class="c1"><%= findpost.c6 %></span>
+  <span class="id"><%= auto_link(findpost.c1) %></span>
+  <span class="c1"><%= auto_link(findpost.c2) %></span>
+  <span class="c1"><%= auto_link(findpost.c3) %></span>
+  <span class="c1"><%= auto_link(findpost.c4) %></span>
+  <span class="c1"><%= auto_link(findpost.c5) %></span>
+  <span class="c1"><%= auto_link(findpost.c6) %></span>
   <div class="f_info">
     <span>
       Posted <%= time_ago_in_words(findpost.created_at) %> ago
