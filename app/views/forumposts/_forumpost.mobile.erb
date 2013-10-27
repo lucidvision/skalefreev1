@@ -39,7 +39,7 @@
                 <%= f.hidden_field :forum, value: forumpost.forum, :id => "forumpost" %>
                 <%= f.label :content, "Reply to this wall" %>
                 <%= f.text_field :content %>
-                <%= f.submit "Reply", :onclick => "replypost()", :id => "first_reply" %>
+                <%= f.submit "Reply", :onclick => "replypost(forumpost.value)", :id => "first_reply" %>
               </div>
             <% end %>
           </div>

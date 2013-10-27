@@ -14,14 +14,14 @@ function refresh_search()
 	$('#wall').val(wall.value);
 	$('#first').click(setTimeout(function(){
 		$('#second').click();
-	},200));
+	},120));
 }
 
-function replypost()
+function replypost(forum)
 {
-	x = $('#forumpost').val();
+	x = forum;
 	$('#wall').val(x);
 	$('#first_reply').click(setTimeout(function(){
 		$('#second').click();
-	},200));
+	},120));
 }

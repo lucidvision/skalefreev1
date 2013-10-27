@@ -41,7 +41,7 @@
                   <%= f.label :content, "Reply to this wall" %><br>
                   <%= f.text_field :content %>
               </div>
-              <%= f.submit "Reply", :onclick => "replypost()", :id => "first_reply" %>
+              <%= f.submit "Reply", :onclick => "replypost(forumpost.value)", :id => "first_reply" %>
             <% end %>
           </div>
         </div>
