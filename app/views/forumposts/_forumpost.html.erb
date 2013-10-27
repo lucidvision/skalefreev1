@@ -12,26 +12,41 @@
     </div>
   </div>
   <div class="wall_post"><%= auto_link(simple_format(forumpost.content)) %></div>
-  <div class="f_info">
-    <span>
-      Posted <%= time_ago_in_words(forumpost.created_at) %> ago
-    </span>
-    <% if signed_in? %>
-      <% if current_user == forumpost.user %>
-      	<span>
-    		  by you | <%= link_to "Delete", forumpost, method: :delete,
-                                         data: { confirm: "Are you sure?" },
-                                         title: forumpost.content %>
-    		</span>
-      <% else %>
-      	<a href="<%= user_path(forumpost.user) %>">
-    		</a>
-    		<span>
-    		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
-    		</span>
+    <div class="f_info">
+      <span>
+        Posted <%= time_ago_in_words(forumpost.created_at) %> ago
+      </span>
+      <% if signed_in? %>
+        <% if current_user == forumpost.user %>
+        	<span>
+      		  by you | <%= link_to "Delete", forumpost, method: :delete,
+                                           data: { confirm: "Are you sure?" },
+                                           title: forumpost.content %>
+      		</span>
+        <% else %>
+        	<a href="<%= user_path(forumpost.user) %>">
+      		</a>
+      		<span>
+      		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %> 
+          </span>
+    </div>
+        <span style="float:right;">
+          <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="Reply">
+        </span>
+        <div id="<%= forumpost.id %>" class="collapse out">
+          <div class="wallreply">
+            <%= form_for @forumpost, :remote => true do |f| %>
+              <div class="field">
+                  <%= f.hidden_field :forum, value: forumpost.forum, :id => "forumpost" %>
+                  <%= f.label :content, "Reply to this wall" %><br>
+                  <%= f.text_field :content %>
+              </div>
+              <%= f.submit "Reply", :onclick => "replypost()", :id => "first_reply" %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     <% else %>
       by <%= forumpost.user.name %> | Please <%= link_to "sign in", :new_user_session %>.
     <% end %>
-  </div>
 </li>

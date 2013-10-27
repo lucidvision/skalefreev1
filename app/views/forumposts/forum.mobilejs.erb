@@ -1,2 +1,4 @@
 $('.wall_mobile').html("<%= escape_javascript(render @wallm) %>");
 $("#mobile_refresh").listview("refresh");
+$('div[data-role=collapsible]').collapsible();
+$('.field').trigger('create');

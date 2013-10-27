@@ -1,20 +1,27 @@
-var x = [];
+var x;
 
 function store_search()
 {
-	x = wall.value;
-	if (x=="") {
-		alert("Please select a wall")
+	if(wall.value==""){
+		alert("Please select a wall.")
 	}
-	$('#wall_selection').empty().append(x);
-	$('#wallpost').val(x);
+	$('#wall_selection').empty().append(wall.value);
+	$('#wallpost').val(wall.value);
 }
 
 function refresh_search()
 {
-	x = wall.value;
-	$('#wall').val(x);
+	$('#wall').val(wall.value);
 	$('#first').click(setTimeout(function(){
 		$('#second').click();
-	},500));
+	},200));
+}
+
+function replypost()
+{
+	x = $('#forumpost').val();
+	$('#wall').val(x);
+	$('#first_reply').click(setTimeout(function(){
+		$('#second').click();
+	},200));
 }

@@ -15,7 +15,7 @@
     </span>
   <% end %>
   <br>
-  <span class="c1"><%= auto_link(forumpost.content) %></span><br>
+  <span style="word-wrap:break-word;"><%= auto_link(forumpost.content) %></span><br>
   <div class="f_info">
     <span>
       Posted <%= time_ago_in_words(forumpost.created_at) %> ago
@@ -32,6 +32,17 @@
         </a>
         <span>
           by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
+          <div data-role="collapsible", data-mini="true">
+            <h3>Reply</h3>
+            <%= form_for @forumpost, :remote => true do |f| %>
+              <div class="field">
+                <%= f.hidden_field :forum, value: forumpost.forum, :id => "forumpost" %>
+                <%= f.label :content, "Reply to this wall" %>
+                <%= f.text_field :content %>
+                <%= f.submit "Reply", :onclick => "replypost()", :id => "first_reply" %>
+              </div>
+            <% end %>
+          </div>
         </span>
       <% end %>
     <% else %>

@@ -228,6 +228,16 @@ input {
   float: right;
 }
 
+.wallreply {
+  padding: 10px;
+  height: 140px;
+  width: 420px;
+  background-color: white;
+  position:relative;
+  z-index: 2;
+  border: 1px solid #000000;
+}
+
 /* findposts */
 
 .f_title {
