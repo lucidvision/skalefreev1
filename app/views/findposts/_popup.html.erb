@@ -4,15 +4,15 @@
   <div class="field">
     <%= f.hidden_field :c1, :value => "Hello! These are the courses I'm taking for Fall 2013!" %>
     <%= f.label :c2, "Course 1" %>
-    <%= f.text_field :c2 %>
+    <%= f.text_field :c2, :id => "course1" %>
     <%= f.label :c3, "Course 2" %>
-    <%= f.text_field :c3 %>
+    <%= f.text_field :c3, :id => "course2" %>
     <%= f.label :c4, "Course 3" %>
-    <%= f.text_field :c4 %>
+    <%= f.text_field :c4, :id => "course3" %>
     <%= f.label :c5, "Course 4" %>
-    <%= f.text_field :c5 %>
+    <%= f.text_field :c5, :id => "course4" %>
     <%= f.label :c6, "Course 5" %>
-    <%= f.text_field :c6 %>
+    <%= f.text_field :c6, :id => "course5" %>
   </div>
   <%= f.submit "Submit", class: "btn btn-large btn-primary", :id => "submitPopUp", :onclick => "close_popup()" %>
 <% end %>
