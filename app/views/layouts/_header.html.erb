@@ -6,7 +6,7 @@
         <ul class="nav pull-right">
           <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Findposts <b class="caret"></b>
+              Find People <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Search", findyou_path %></li>
@@ -15,7 +15,7 @@
               <% end %>
             </ul>
           </li>
-          <li><%= link_to "Wall", wall_path %></li>
+          <li><%= link_to "Newsfeed", wall_path %></li>
           <% if signed_in? %>
             <% if current_user.admin? %>
               <li><%= link_to "Users", users_path %></li>
