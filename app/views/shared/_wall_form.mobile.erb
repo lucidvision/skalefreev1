@@ -2,8 +2,8 @@
                         :html => {:method => :post},
                         :remote => true do |f| %>
   <div class="field">
-    <%= f.label :forum_cont, "Create or Select a Wall" %>
+    <%= f.label :forum_cont, "Select a Wall" %>
     <%= f.text_field :forum_cont, :id => "wall"%>
   </div>
-  <%= f.submit "Select / Refresh", :onclick => "store_search()", :id => "second" %>
+  <%= f.submit "Select", :onclick => "store_search()", :id => "second" %>
 <% end %>
