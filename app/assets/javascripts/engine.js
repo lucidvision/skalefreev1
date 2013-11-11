@@ -1,9 +1,14 @@
 var x;
 
+function close_popup()
+{
+	$(".modal").css("display", "none");
+}
+
 function store_search()
 {
 	if(wall.value==""){
-		alert("Please select a wall.")
+		alert("Please select a wall.");
 	}
 	$('#wall_selection').empty().append(wall.value);
 	$('#wallpost').val(wall.value);
@@ -25,3 +30,4 @@ function replypost(forum)
 		$('#second').click();
 	},120));
 }
+

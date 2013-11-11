@@ -12,16 +12,23 @@
   <body>
     <!-- Start Alexa Certify Javascript -->
 <script type="text/javascript">
-_atrk_opts = { atrk_acct:"kiXji1aUCm00ab", domain:"skalefree.net",dynamic: true};
+_atrk_opts = { atrk_acct:"kiXji1aUCm00ab", domain:"skalefree.net", dynamic: true};
 (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
 </script>
 <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=kiXji1aUCm00ab" style="display:none" height="1" width="1" alt="" /></noscript>
 <!-- End Alexa Certify Javascript -->
+    <% if signed_in? && current_user.findposts.count == 0 %>
+      <%= link_to "", popup_path, :id => "popup", :remote => true %>
+    <% end %>
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+      <div class="modal", style="display:none;"></div>
+      <script>
+        document.getElementById('popup').click();
+      </script>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>

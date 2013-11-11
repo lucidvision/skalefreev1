@@ -1,0 +1,17 @@
+<%= form_for @post, :remote => true do |f| %>
+  <div class="field">
+  	<%= f.label :c1, "Subject" %>
+    <%= f.text_field :c1 %>
+    <%= f.label :c2, "Criteria 1" %>
+    <%= f.text_field :c2 %>
+    <%= f.label :c3, "Criteria 2" %>
+    <%= f.text_field :c3 %>
+    <%= f.label :c4, "Criteria 3" %>
+    <%= f.text_field :c4 %>
+    <%= f.label :c5, "Criteria 4" %>
+    <%= f.text_field :c5 %>
+    <%= f.label :c6, "Criteria 5" %>
+    <%= f.text_field :c6 %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -44,6 +44,13 @@ class FindpostsController < ApplicationController
     redirect_to findme_path
   end
 
+  def popup
+    @post = current_user.findposts.build(params[:findpost])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
     def correct_user
