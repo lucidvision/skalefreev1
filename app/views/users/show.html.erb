@@ -17,15 +17,17 @@
         </section>
         <br>
         <br>
-        <div id="traits">
-            <ul>
-           <%= render 'shared/profile' %>
-            </ul>
-        </div>
-        <div id="about">
-            <b>Additional Information:</b> <br><br>
-            <%= auto_link(simple_format(@profile.about)) %><br><br>
-        </div>
+        <section style = "background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
+            <div id="traits">
+                <ul>
+               <%= render 'shared/profile' %>
+                </ul>
+            </div>
+            <div id="about">
+                <b>Additional Information:</b> <br><br>
+                <%= auto_link(simple_format(@profile.about)) %><br><br>
+            </div>
+        </section>
     </aside>
     <div class="span8">
         <div style="float:right;">
