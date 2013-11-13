@@ -40,6 +40,10 @@ textarea {
   }
 }
 
+.sBorder {
+  border-bottom: 1px solid #000000;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -162,27 +166,32 @@ input {
 /* profile */
 
 #traits {
-  padding-top:50px;
+  padding:10px;
   width: 310px;
   word-wrap: break-word;
-  border-top: 1px solid #000000;
+  background-color:#D6FFFF;
 }
 
 #about {
-  padding-top:30px;
+  padding:10px;
   height:300px;
   width: 310px;
   word-wrap: break-word;
-  border-bottom: 1px solid #000000;
+  background-color:#D6FFFF;
 }
 
 .profileposts {
+  padding:0px 10px;
   list-style: none;
   margin: 10px 0 0 0;
   float: right;
   width: 530px;
+  background-color:#D6FFFF;
+  border-left:1px solid #000000;
+  border-right:1px solid #000000;
 
   li {
+    padding:10px;
     padding: 10px 0;
     height: 140px;
     border-bottom: 1px solid #000000;
@@ -197,6 +206,10 @@ input {
   margin: 10px 0 0 0;
   float: right;
   width: 530px;
+  padding: 0px 10px;
+  background-color:#D6FFFF;
+  border-left:1px solid #000000;
+  border-right:1px solid #000000;
 
   li {
     padding: 10px 0;
@@ -222,6 +235,7 @@ input {
   height: 20px;
   padding: 10px;
   border-style: solid;
+  background-color: white;
 }
 
 #paginatorp {
@@ -253,6 +267,10 @@ input {
   margin: 10px 0 0 0;
   float: right;
   width: 530px;
+  padding: 0px 10px;
+  background-color:#D6FFFF;
+  border-left:1px solid #000000;
+  border-right:1px solid #000000;
 
   li {
     padding: 10px 0;
@@ -267,6 +285,10 @@ input {
   margin: 10px 0 0 0;
   float: right;
   width: 530px;
+  padding: 0px 10px;
+  background-color:#D6FFFF;
+  border-left:1px solid #000000;
+  border-right:1px solid #000000;
 
   li {
     padding: 10px 0;

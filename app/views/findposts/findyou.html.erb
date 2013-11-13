@@ -2,7 +2,7 @@
 <div class="row">
   <aside class="span4">
     <% if signed_in? %> 
-      <section>
+      <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
         <%= render 'shared/user_info' %>
       </section>
     <% else %>
@@ -13,10 +13,14 @@
         Or search for people below.<br><br>
       <section>
     <% end %>
-    <section>
+    <br>
+    <br>
+    <section style = "padding:10px; background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
       <%= render 'shared/search_form' %>
     </section>
-    <section>
+    <br>
+    <br>
+    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
       <p>
         <b>Website Statistics</b><br>
         Number of Users: <%= User.all.count %><br>

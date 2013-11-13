@@ -2,20 +2,27 @@
 <div class="row">
   <aside class="span4">
     <% if signed_in? %> 
-      <section>
+      <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
         <%= render 'shared/user_info' %>
       </section>
     <% else %>
-      <section>
+      <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
         <h1>Welcome to the Skalefree Wall!</h1> 
         Visit our <%= link_to "wall help", wall_help_path %> page for more information.<br><br>
         Please <%= link_to "sign up", :new_user_registration%> to create wallposts, access profiles, and message users.<br><br>
         Or search for walls below.<br><br>
-      <section>
+      </section>
     <% end %>
-    <section>
+    <br>
+    <br>
+    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
+      <b>Post on a Wall</b><br><br>
       <%= render 'shared/wall_form' %>
-      <h4>You have selected the wall:<br><br><div id="wall_selection"></div></h4>
+    </section>
+    <br>
+    <br>
+    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
+      <h5>You have selected the wall:<br><br><div id="wall_selection"></div></h5>
       <% if signed_in? %> 
         <%= render 'shared/forumpost_form' %>
       <% end %>
