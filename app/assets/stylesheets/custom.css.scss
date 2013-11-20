@@ -40,8 +40,19 @@ textarea {
   }
 }
 
-.sBorder {
-  border-bottom: 1px solid #000000;
+.cfont {
+  color: white;
+}
+
+.sborder {
+  padding: 15px;
+  background-color: $grayLight;
+  border: 3px solid #FAFAFA;
+  border-radius:25px;
+}
+
+.bbackground {
+  background-color: #1C1C1C;
 }
 
 /* typography */
@@ -78,9 +89,9 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
   a {
-    color: $gray;
+    color: $grayLight;
     &:hover { 
-      color: $grayDarker;
+      color: white;
     }
   }  
   small { 
@@ -119,6 +130,11 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+.home {
+  text-align:center;
+  color:white;
 }
 
 /* forms */
@@ -166,17 +182,11 @@ input {
 /* profile */
 
 #traits {
-  padding:10px;
-  width: 280px;
   word-wrap: break-word;
-  background-color:#D6FFFF;
 }
 
 #about {
-  padding:10px;
   word-wrap: break-word;
-  width: 280px;
-  background-color:#D6FFFF;
 }
 
 .profileposts {
@@ -185,9 +195,9 @@ input {
   margin: 10px 0 0 0;
   float: right;
   width: 530px;
-  background-color:#D6FFFF;
-  border-left:1px solid #000000;
-  border-right:1px solid #000000;
+  background-color:white;
+  border:5px solid white;
+  border-radius:25px;
 
   li {
     padding:10px;
@@ -198,6 +208,20 @@ input {
   }
 }
 
+.pedit {
+  padding:15px 50px;
+  background-color:$grayLight;
+  border:3px solid white;
+  border-radius:25px;
+}
+
+.spages {
+  padding:15px 50px;
+  background-color:white;
+  border:3px solid white;
+  border-radius:25px;
+}
+
 /* wallposts */
 
 .wall_results {
@@ -206,9 +230,9 @@ input {
   float: right;
   width: 530px;
   padding: 0px 10px;
-  background-color:#D6FFFF;
-  border-left:1px solid #000000;
-  border-right:1px solid #000000;
+  background-color:white;
+  border:5px solid white;
+  border-radius:25px;
 
   li {
     padding: 10px 0;
@@ -231,10 +255,9 @@ input {
 
 #wall_selection {
   width: 200px;
-  height: 20px;
-  padding: 10px;
-  border-style: solid;
+  padding:10px;
   background-color: white;
+  border-radius:25px;
 }
 
 #paginatorp {
@@ -242,19 +265,21 @@ input {
 }
 
 .wallreply {
-  padding: 10px;
+  padding: 15px;
   height: 140px;
   width: 420px;
-  background-color: white;
+  background-color: $grayLight;
   position:relative;
   z-index: 2;
-  border: 1px solid #000000;
+  border: 3px solid #000000;
+  border-radius:25px;
 }
 
 /* findposts */
 
 .f_title {
   float: right;
+  color: white;
 }
 .f_info {
   position: absolute;
@@ -267,9 +292,9 @@ input {
   float: right;
   width: 530px;
   padding: 0px 10px;
-  background-color:#D6FFFF;
-  border-left:1px solid #000000;
-  border-right:1px solid #000000;
+  background-color:white;
+  border:5px solid white;
+  border-radius:25px;
 
   li {
     padding: 10px 0;
@@ -284,10 +309,10 @@ input {
   margin: 10px 0 0 0;
   float: right;
   width: 530px;
-  padding: 0px 10px;
-  background-color:#D6FFFF;
-  border-left:1px solid #000000;
-  border-right:1px solid #000000;
+  padding: 5px 15px;
+  background-color:white;
+  border:5px solid white;
+  border-radius:25px;
 
   li {
     padding: 10px 0;
@@ -327,6 +352,10 @@ aside {
 
 /* convos */
 
+.mbutton {
+  margin-left:20px;
+}
+
 #convos {
   width: 100%;
 }
@@ -336,24 +365,30 @@ aside {
   height: 600px;
   margin-top: 20px;
   margin-bottom: 30px;
-  width: 31%;
+  width: 28%;
   padding: 1%;
   overflow-y:auto;
+  background-color: white;
+  border:5px solid white;
+  border-radius:25px;
 }
 
 #convos .inbox {
   float: left;
   border-width: 2px;
+  margin: 10px;
 }
 
 #convos .sentbox {
   float: left;
   border-width: 2px;
+  margin: 10px;
 }
 
 #convos .trashbox {
-  float: right;
+  float: left;
   border-width: 2px;
+  margin: 10px;
 }
 
 .c_info {
@@ -383,6 +418,12 @@ aside {
 }
 
 /* miscellaneous */
+
+.homepic {
+  background-color: white;
+  border:10px solid white;
+  border-radius:25px;
+}
 
 .debug_dump {
   clear: both;

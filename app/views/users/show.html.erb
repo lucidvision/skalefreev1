@@ -1,56 +1,57 @@
 <% provide(:title, @user.name) %>
 <div class="row">
     <aside class="span4">
-        <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
-            <h1><%= @user.name %></h1>
-            <%= pluralize(@user.findposts.count, "findpost") %><br>
-            <%= pluralize(@user.forumposts.count, "wallpost") %><br>
-            <% if @user == current_user %>
-            	<%= link_to "Edit Profile", edit_profile_path(@user) %>
-            <% end %>
-            <br>
-            <strong>Reputation: </strong><%= @user.reputation_for(:votes).to_i %>
-            <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary", style: "float: right;" %>
-            <br>
-            <%= link_to "Up", vote_user_path(@user, type: "up"), method: "post" %>
-            | <%= link_to "Down", vote_user_path(@user, type: "down"), method: "post" %>
-        </section>
+      <div class="sborder">
+        <span style="font-size:200%"><b><%= @user.name %></b></span><br>
+        <%= pluralize(@user.findposts.count, "findpost") %><br>
+        <%= pluralize(@user.forumposts.count, "wallpost") %><br>
+        <% if @user == current_user %>
+        	<%= link_to "Edit Profile", edit_profile_path(@user) %>
+        <% end %>
         <br>
+        <strong>Reputation: </strong><%= @user.reputation_for(:votes).to_i %>
+        <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary", style: "float: right;" %>
         <br>
-        <section style = "background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
-            <div id="traits">
-                <ul>
-               <%= render 'shared/profile' %>
-                </ul>
-            </div>
-            <div id="about">
-                <b>Additional Information:</b> <br><br>
-                <%= auto_link(simple_format(@profile.about)) %><br><br>
-            </div>
-        </section>
+        <%= link_to "Up", vote_user_path(@user, type: "up"), method: "post" %>
+        | <%= link_to "Down", vote_user_path(@user, type: "down"), method: "post" %>
+      </div>
+      <br>
+      <br>
+      <div class="sborder">
+        <div id="traits">
+            <ul>
+           <%= render 'shared/profile' %>
+            </ul>
+        </div>
+        <br>
+        <div id="about">
+            <b>Additional Information:</b> <br><br>
+            <%= auto_link(simple_format(@profile.about)) %><br><br>
+        </div>
+      </div>
     </aside>
     <div class="span8">
+      <div style="float:right;">
+        <% if @user.findposts.any? %>
+          <h3 class="f_title">Findposts</h3>
+          <ol class="findposts">
+            <%= render @findposts %>
+          </ol>
+        <% end %>
         <div style="float:right;">
-            <% if @user.findposts.any? %>
-              <h3 class="f_title">Findposts</h3>
-              <ol class="findposts">
-                <%= render @findposts %>
-              </ol>
-            <% end %>
-            <div style="float:right;">
-                <%= paginate @findposts, :theme => 'twitter-bootstrap' %>
-            </div>
+            <%= paginate @findposts, :theme => 'twitter-bootstrap' %>
         </div>
-        <div style="float:right;">
-            <% if @user.forumposts.any? %>
-              <h3 class="f_title"><br>Wallposts</h3>
-              <ol class="profileposts">
-                <%= render @forumposts %>
-              </ol>
-            <% end %>
-            <div id="paginatorp2", style="float:right;">
-                <%= paginate @forumposts, :theme => 'twitter-bootstrap', :remote => true %>
-            </div>
+      </div>
+      <div style="float:right;">
+        <% if @user.forumposts.any? %>
+          <h3 class="f_title"><br>Wallposts</h3>
+          <ol class="profileposts">
+            <%= render @forumposts %>
+          </ol>
+        <% end %>
+        <div id="paginatorp2", style="float:right;">
+            <%= paginate @forumposts, :theme => 'twitter-bootstrap', :remote => true %>
         </div>
+      </div>
     </div>
 </div>

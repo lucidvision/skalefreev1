@@ -2,33 +2,33 @@
 <div class="row">
   <aside class="span4">
     <% if signed_in? %> 
-      <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
-        <%= render 'shared/user_info' %>
-      </section>
+        <div class="sborder">
+          <%= render 'shared/user_info' %>
+        </div>
     <% else %>
-      <section>
-        <h1>Welcome to Skalefree @ SFU!</h1> 
+      <div class="sborder">
+        <span style="font-size:130%;"><b>Welcome to Skalefree @ SFU!</b></span><br><br>
         Visit our <%= link_to "help", help_path %> page for more information.<br><br>
         Please <%= link_to "sign up", :new_user_registration%> to create findposts, access profiles, and send messages.<br><br>
         Or search for people below.<br><br>
-      <section>
+      </div>
     <% end %>
     <br>
     <br>
-    <section style = "padding:10px; background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
-      <%= render 'shared/search_form' %>
-    </section>
+      <div class="sborder">
+        <%= render 'shared/search_form' %>
+      </div>
     <br>
     <br>
-    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
-      <p>
-        <b>Website Statistics</b><br>
-        Number of Users: <%= User.all.count %><br>
-        Number of Findposts: <%= Findpost.all.count %><br>
-        Number of Wallposts: <%= Forumpost.all.count %><br>
-        Number of Messages: <%= Message.all.count %><br>
-      </p>
-    </section>
+      <div class="sborder">
+        <p>
+          <b>Website Statistics</b><br>
+          Number of Users: <%= User.all.count %><br>
+          Number of Findposts: <%= Findpost.all.count %><br>
+          Number of Wallposts: <%= Forumpost.all.count %><br>
+          Number of Messages: <%= Message.all.count %><br>
+        </p>
+      </div>
   </aside>
   <div class="span8">
     <h3 class="f_title">Search Findposts</h3>

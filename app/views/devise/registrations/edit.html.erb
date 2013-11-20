@@ -1,24 +1,28 @@
 <% provide(:title, "Edit Login") %>
-<h1>Edit Login</h1>
+<h1 class="cfont">Edit Login</h1>
+<div class="pedit">
+  <br>
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= f.error_notification %>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :name, :required => true %> 
 
-  <div class="form-inputs">
-    <%= f.input :name, :required => true %> 
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, :autocomplete => "off", :required => false, :label => "New Password" %>
-    <%= f.input :password_confirmation, :label => "New Password Confirmation", :required => false %>
-    <%= f.input :current_password, :required => true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<%= link_to "Back", :back %>
+      <%= f.input :password, :autocomplete => "off", :required => false, :label => "New Password" %>
+      <%= f.input :password_confirmation, :label => "New Password Confirmation", :required => false %>
+      <%= f.input :current_password, :required => true %>
+    </div>
+    <br>
+    <%= f.button :submit, "Update" %><br>
+    <%= link_to "Back", :back %>
+  <% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>

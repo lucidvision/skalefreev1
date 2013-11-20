@@ -1,18 +1,18 @@
 <% provide(:title, 'Create') %>
 <div class="row">
   <aside class="span4">
-    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
+    <div class="sborder">
       <%= render 'shared/user_info' %>
-    </section>
+    </div>
     <br>
     <br>
-    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
+    <div class="sborder">
       <b>Create Findpost</b><br><br>
       <%= render 'shared/findpost_form' %>
-    </section>
+    </div>
     <br>
     <br>
-    <section style = "padding:10px;background-color:#D6FFFF;border-top:1px solid #000000;border-bottom:1px solid #000000;">
+    <div class="sborder">
       <p>
         <b>Suggested Criteria:</b><br>
         1. Purpose <br>
@@ -23,9 +23,9 @@
         6. Condition <br>
         8. Qualification <br>
         9. Personality <br>
-        10. Additional Information <br><br>
+        10. Additional Information <br>
       </p>
-    </section>
+    </div>
   </aside>
   <div class="span8">
     <% if @user.findposts.any? %>

@@ -1,31 +1,30 @@
 <% provide(:title, "Edit Profile") %>
-<h1>Change your Profile</h1>
-
+<h1 class="cfont">Change your Profile</h1>
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@profile) do |f| %>
-
-    	<%= f.label :gender %>
-	    <%= f.text_field :gender %>
-	    <%= f.label :age %>
-	    <%= f.text_field :age %>
-	    <%= f.label :location %>
-	    <%= f.text_field :location %>
-	    <%= f.label :work %>
-	    <%= f.text_field :work %>
-	    <%= f.label :education, "Major/Year" %>
-	    <%= f.text_field :education %>
-	    <%= f.label :interests %>
-	    <%= f.text_field :interests %>
-	    <%= f.label :philosophy, "Religion/Beliefs" %>
-	    <%= f.text_field :philosophy %>
-	    <%= f.label :personality %>
-	    <%= f.text_field :personality %>
-	    <%= f.label :about %>
-	    <%= f.text_area :about %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
-
+  	<div class="pedit">
+  		<br>
+	    <%= form_for(@profile) do |f| %>
+	    	<%= f.label :gender %>
+		    <%= f.text_field :gender %>
+		    <%= f.label :age %>
+		    <%= f.text_field :age %>
+		    <%= f.label :location %>
+		    <%= f.text_field :location %>
+		    <%= f.label :work %>
+		    <%= f.text_field :work %>
+		    <%= f.label :education, "Major/Year" %>
+		    <%= f.text_field :education %>
+		    <%= f.label :interests %>
+		    <%= f.text_field :interests %>
+		    <%= f.label :philosophy, "Religion/Beliefs" %>
+		    <%= f.text_field :philosophy %>
+		    <%= f.label :personality %>
+		    <%= f.text_field :personality %>
+		    <%= f.label :about %>
+		    <%= f.text_area :about %>
+	      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+	    <% end %>
+	   </div>
   </div>
 </div>
