@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131002183507) do
+ActiveRecord::Schema.define(:version => 20131122085707) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -152,8 +152,14 @@ ActiveRecord::Schema.define(:version => 20131002183507) do
     t.boolean  "admin",                  :default => false
     t.string   "name"
     t.boolean  "active",                 :default => true
+    t.string   "authentication_token"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
