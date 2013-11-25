@@ -1,8 +1,8 @@
 <h3>Welcome to Skalefree!</h3>
-<h5>Please enter the courses you're taking for Fall 2013.</h5>
+<h5>Please enter the courses you're taking for <b>Spring 2014</b>.</h5>
 <%= form_for @post, :remote => true do |f| %>
   <div class="field">
-    <%= f.hidden_field :c1, :value => "Hello! These are the courses I'm taking for Fall 2013!" %>
+    <%= f.hidden_field :c1, :value => "Hello! These are the courses I'm taking for Spring 2014!" %>
     <%= f.label :c2, "Course 1" %>
     <%= f.text_field :c2 %>
     <%= f.label :c3, "Course 2" %>
