@@ -16,6 +16,15 @@
 <h4 class="home">Visit our <%= link_to "about", about_path %> page for more information.</h4>
 <br>
 <br>
+<div class="sborder" style="width:200px; margin-left:auto; margin-right:auto; text-align:center;">
+  <p>
+    <b>Website Statistics</b><br>
+    Number of Users: <%= User.all.count %><br>
+    Number of Findposts: <%= Findpost.all.count %><br>
+    Number of Wallposts: <%= Forumpost.all.count %><br>
+    Number of Messages: <%= Message.all.count %><br>
+  </p>
+</div>
 <br>
 <br>
 <br>

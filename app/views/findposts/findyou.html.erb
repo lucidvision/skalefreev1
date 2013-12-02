@@ -21,13 +21,7 @@
     <br>
     <br>
       <div class="sborder">
-        <p>
-          <b>Website Statistics</b><br>
-          Number of Users: <%= User.all.count %><br>
-          Number of Findposts: <%= Findpost.all.count %><br>
-          Number of Wallposts: <%= Forumpost.all.count %><br>
-          Number of Messages: <%= Message.all.count %><br>
-        </p>
+        <%= button_to "Create a Findpost", findme_path, :class => "btn btn-large btn-primary"%>
       </div>
   </aside>
   <div class="span8">
