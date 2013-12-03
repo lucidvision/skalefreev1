@@ -39,6 +39,7 @@
             <%= paginate @findposts, :theme => 'twitter-bootstrap' %>
         </div>
       </div>
+      <br>
       <div style="float:right;">
         <% if @user.forumposts.any? %>
           <h3 class="pHeadings">Wallposts (<%= @user.forumposts.count %>)</h3>
