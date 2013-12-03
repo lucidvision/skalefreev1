@@ -1,6 +1,4 @@
 <span style="font-size:200%"><b><%= current_user.name %></b></span><br>
-<%= pluralize(current_user.findposts.count, "findpost") %><br>
-<%= pluralize(current_user.forumposts.count, "wallpost") %><br>
 <span>
   <%= link_to "View Profile", current_user %>
 </span>

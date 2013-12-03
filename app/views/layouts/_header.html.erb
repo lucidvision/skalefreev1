@@ -4,17 +4,7 @@
       <nav>
         <%= link_to image_tag("logo.jpg"), root_path %>
         <ul class="nav pull-right">
-          <li id="fat-menu" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Find People <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Search", findyou_path %></li>
-              <% if signed_in? %>
-                <li><%= link_to "Create", findme_path %></li>
-              <% end %>
-            </ul>
-          </li>
+          <li><%= link_to "Find People", findyou_path %></li>
           <li><%= link_to "News Feed", wall_path %></li>
           <% if signed_in? %>
             <% if current_user.admin? %>

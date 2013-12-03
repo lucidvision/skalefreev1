@@ -1,4 +1,4 @@
-<% provide(:title, 'Wall') %>
+<% provide(:title, 'News Feed') %>
 <div class="row">
   <aside class="span4">
     <% if signed_in? %> 
@@ -27,8 +27,8 @@
     </div>
   </aside>
   <div class="span8">
-    <h3 class="f_title">Wallposts</h3>
-    <ul class="wall_results">
+    <h3 class="pHeadings"><span id="wall_heading"></span> Wallposts</h3>
+    <ul class="results">
       <%= render @wall %>
     </ul>
   </div>

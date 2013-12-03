@@ -55,6 +55,11 @@ textarea {
   background-color: #1C1C1C;
 }
 
+.pHeadings {
+  text-align: center;
+  color: white;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -189,25 +194,6 @@ input {
   word-wrap: break-word;
 }
 
-.profileposts {
-  padding:0px 10px;
-  list-style: none;
-  margin: 10px 0 0 0;
-  float: right;
-  width: 530px;
-  background-color:white;
-  border:5px solid white;
-  border-radius:25px;
-
-  li {
-    padding:10px;
-    padding: 10px 0;
-    height: 140px;
-    border-bottom: 1px solid #000000;
-    position: relative;
-  }
-}
-
 .pedit {
   padding:15px 50px;
   background-color:$grayLight;
@@ -223,24 +209,6 @@ input {
 }
 
 /* wallposts */
-
-.wall_results {
-  list-style: none;
-  margin: 10px 0 0 0;
-  float: right;
-  width: 530px;
-  padding: 0px 10px;
-  background-color:white;
-  border:5px solid white;
-  border-radius:25px;
-
-  li {
-    padding: 10px 0;
-    height: 140px;
-    border-bottom: 1px solid #000000;
-    position: relative;
-  }
-}
 
 .wall_post {
   width: 530px;
@@ -260,10 +228,6 @@ input {
   border-radius:25px;
 }
 
-#paginatorp {
-  float: right;
-}
-
 .wallreply {
   padding: 15px;
   height: 140px;
@@ -277,33 +241,10 @@ input {
 
 /* findposts */
 
-.f_title {
-  float: right;
-  color: white;
-}
 .f_info {
   position: absolute;
   bottom: 5px;
 }
-
-.findposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-  float: right;
-  width: 530px;
-  padding: 0px 10px;
-  background-color:white;
-  border:5px solid white;
-  border-radius:25px;
-
-  li {
-    padding: 10px 0;
-    height: 140px;
-    border-bottom: 1px solid #000000;
-    position: relative;
-  }
-}
-
 .results {
   list-style: none;
   margin: 10px 0 0 0;
@@ -320,14 +261,6 @@ input {
     border-bottom: 1px solid #000000;
     position: relative;
   }
-}
-
-#paginatorr {
-  float: right;
-}
-
-#paginatorf {
-  float: right;
 }
 
 .c1 {

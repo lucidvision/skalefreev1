@@ -3,12 +3,10 @@
     <aside class="span4">
       <div class="sborder">
         <span style="font-size:200%"><b><%= @user.name %></b></span><br>
-        <%= pluralize(@user.findposts.count, "findpost") %><br>
-        <%= pluralize(@user.forumposts.count, "wallpost") %><br>
         <% if @user == current_user %>
         	<%= link_to "Edit Profile", edit_profile_path(@user) %>
         <% end %>
-        <br>
+        <br><br>
         <strong>Reputation: </strong><%= @user.reputation_for(:votes).to_i %>
         <%= link_to 'Send Message', new_conversation_path(target: @user.name), class: "btn btn-large btn-primary", style: "float: right;" %>
         <br>
@@ -32,8 +30,8 @@
     <div class="span8">
       <div style="float:right;">
         <% if @user.findposts.any? %>
-          <h3 class="f_title">Findposts</h3>
-          <ol class="findposts">
+          <h3 class="pHeadings">Findposts (<%=@user.findposts.count%>)</h3>
+          <ol class="results">
             <%= render @findposts %>
           </ol>
         <% end %>
@@ -43,12 +41,12 @@
       </div>
       <div style="float:right;">
         <% if @user.forumposts.any? %>
-          <h3 class="f_title"><br>Wallposts</h3>
-          <ol class="profileposts">
+          <div class="pHeadings"><h3>Wallposts (<%= @user.forumposts.count %>)</h3></div>
+          <ol class="results">
             <%= render @forumposts %>
           </ol>
         <% end %>
-        <div id="paginatorp2", style="float:right;">
+        <div id="paginator", style="float:right;">
             <%= paginate @forumposts, :theme => 'twitter-bootstrap', :remote => true %>
         </div>
       </div>

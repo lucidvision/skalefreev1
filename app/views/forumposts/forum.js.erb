@@ -1,2 +1,2 @@
-$('.wall_results').html("<%= escape_javascript(render @wall) %>");
+$('.results').html("<%= escape_javascript(render @wall) %>");
 $('#paginator').html('<%= escape_javascript(paginate(@wall, :theme => 'twitter-bootstrap', :remote => true).to_s) %>');

@@ -31,12 +31,12 @@
     </div>
   </aside>
   <div class="span8">
-    <h3 class="f_title">Search Findposts</h3>
+    <div class="pHeadings"><h3>Findposts</h3></div>
     <ol class="results">
       <%= render @results %>
     </ol>
   </div>
-  <div id="paginatorr">
+  <div id="paginator">
     <%= paginate @results, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>  

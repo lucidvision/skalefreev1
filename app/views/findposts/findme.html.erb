@@ -27,13 +27,13 @@
   </aside>
   <div class="span8">
     <% if @user.findposts.any? %>
-      <h3 class="f_title">Create Findposts (<%= @user.findposts.count %>)</h3>
-      <ol class="findposts">
+      <div class="pHeadings"><h3>Create Findposts (<%= @user.findposts.count %>)</h3></div>
+      <ol class="results">
         <%= render @findposts %>
       </ol>
     <% end %>
   </div>
-  <div id="paginatorf">
+  <div id="paginator">
     <%= paginate @findposts, :theme => 'twitter-bootstrap', :remote => true %>
   </div>
 </div>
