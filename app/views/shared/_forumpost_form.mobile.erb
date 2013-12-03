@@ -2,7 +2,7 @@
   <div class="field">
     <%= f.hidden_field :forum, :id => "wallpost" %>
     <%= f.label :content, "Write a post on this wall" %>
-    <%= f.text_area :content %>
+    <%= f.text_field :content %>
   </div>
   <%= f.submit "Post", :onclick => "refresh_search()", :id => "first" %>
 <% end %>
