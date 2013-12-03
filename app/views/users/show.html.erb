@@ -41,7 +41,7 @@
       </div>
       <div style="float:right;">
         <% if @user.forumposts.any? %>
-          <div class="pHeadings"><h3>Wallposts (<%= @user.forumposts.count %>)</h3></div>
+          <h3 class="pHeadings">Wallposts (<%= @user.forumposts.count %>)</h3>
           <ol class="results">
             <%= render @forumposts %>
           </ol>

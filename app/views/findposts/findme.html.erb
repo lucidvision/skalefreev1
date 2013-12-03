@@ -27,7 +27,7 @@
   </aside>
   <div class="span8">
     <% if @user.findposts.any? %>
-      <div class="pHeadings"><h3>Create Findposts (<%= @user.findposts.count %>)</h3></div>
+      <h3 class="pHeadings">Create Findposts (<%= @user.findposts.count %>)</h3>
       <ol class="results">
         <%= render @findposts %>
       </ol>
