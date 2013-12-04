@@ -14,11 +14,15 @@
       </div>
     <% end %>
     <br>
-    <div style="position:relative; left:10px;"><%= button_to "Create a Findpost", findme_path, :class => "btn btn-large btn-primary"%></div>
-      <div class="sborder">
-        <b>Search Findposts</b><br><br>
-        <%= render 'shared/search_form' %>
-      </div>
+    <div class="sborder">
+      <b>Create Findposts</b><br><br>
+      <%= button_to "Create", findme_path, :class => "btn btn-large btn-primary"%>
+    </div> 
+    <br>
+    <div class="sborder">
+      <b>Search Findposts</b><br><br>
+      <%= render 'shared/search_form' %>
+    </div>
     <br>
     <div class="sborder">
       <p>
