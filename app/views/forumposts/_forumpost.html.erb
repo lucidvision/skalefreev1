@@ -29,6 +29,7 @@
       		<span>
       		  by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %> 
           </span>
+        <% end %>
     </div>
         <span style="float:right;">
           <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="<%= forumpost.comments.count %> comments">
@@ -39,7 +40,7 @@
               <ul class="comments">
                 <% forumpost.comments.each do |com| %>
                   <li style="height:auto; padding:10px;">
-                    <%= link_to com.user.name, com.user %>
+                    <%= link_to com.user.name, com.user %> | 
                     <%= com.content %>
                   </li>
                 <% end %>
@@ -51,12 +52,10 @@
                   <%= f.text_area :content, :rows => "3" %>
               </div>
               <%= f.submit "Reply", :onclick => "replypost('#{forumpost.forum}');", :id => "first_reply" %><span style="float:right;">
-              <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="close">
-            </span>
+              <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="close"></span>
             <% end %>
           </div>
         </div>
-      <% end %>
     <% else %>
       by <%= forumpost.user.name %> | Please <%= link_to "sign in", :new_user_session %>.
     <% end %>

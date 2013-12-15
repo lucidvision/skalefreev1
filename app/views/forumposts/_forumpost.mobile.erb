@@ -32,6 +32,7 @@
         </a>
         <span>
           by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
+      <% end %>
           <div data-role="collapsible", data-mini="true">
             <h3><%= forumpost.comments.count %> comments</h3>
             <ul data-role="listview">
@@ -54,7 +55,6 @@
             </div>
           </div>
         </span>
-      <% end %>
     <% else %>
       by <%= forumpost.user.name %> | Please <%= link_to "sign in", :new_user_session %>
     <% end %> 
