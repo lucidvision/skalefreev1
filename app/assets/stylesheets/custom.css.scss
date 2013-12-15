@@ -230,13 +230,22 @@ input {
 
 .wallreply {
   padding: 15px;
-  height: 140px;
-  width: 420px;
+  width: 370px;
   background-color: $grayLight;
   position:relative;
   z-index: 2;
   border: 3px solid #000000;
   border-radius:25px;
+}
+
+.comments {
+  list-style: none;
+  padding: 10px;
+  li {
+    background-color: white;
+    word-wrap:break-word;
+    overflow: auto;
+  }
 }
 
 /* findposts */

@@ -29,6 +29,7 @@ Skalefreev1::Application.routes.draw do
       match '/search' => 'forumposts#forum', :via => [:get, :post], :as => :search
     end
     member { post :vote }
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :conversations, only: [:index, :show, :new, :create] do

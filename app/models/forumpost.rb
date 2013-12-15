@@ -1,6 +1,8 @@
 class Forumpost < ActiveRecord::Base
   attr_accessible :content, :forum
+
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   validates :content, presence: true, length: { maximum: 10000 }
   validates :forum, presence: true, length: { maximum: 40 }

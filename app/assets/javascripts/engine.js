@@ -25,10 +25,9 @@ function refresh_search()
 
 function replypost(forum)
 {
-	x = forum;
-	$('#wall').val(x);
-	$('#first_reply').click(setTimeout(function(){
-		$('#second').click();
-	},120));
+  x = forum;
+  $('#wall').val(x);
+  $('#first_reply').click(setTimeout(function(){
+    $('#second').click();
+  },120));
 }
-

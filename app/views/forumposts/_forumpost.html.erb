@@ -1,5 +1,5 @@
 <li>
-  <div class="id">Wall: <%= forumpost.forum %>
+  <div class="id"><%= forumpost.forum %>
     <div style="float:right;">
       <% if signed_in? %>
         <%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %>
@@ -31,17 +31,28 @@
           </span>
     </div>
         <span style="float:right;">
-          <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="Reply">
+          <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="<%= forumpost.comments.count %> comments">
         </span>
         <div id="<%= forumpost.id %>" class="collapse out">
           <div class="wallreply">
-            <%= form_for @forumpost, :remote => true do |f| %>
+            <% if forumpost.comments.any? %> 
+              <ul class="comments">
+                <% forumpost.comments.each do |com| %>
+                  <li style="height:auto; padding:10px;">
+                    <%= link_to com.user.name, com.user %>
+                    <%= com.content %>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+            <%= form_for :comment, :remote => true, :url => forumpost_comments_path(forumpost) do |f| %>
               <div class="field">
-                  <%= f.hidden_field :forum, value: forumpost.forum, :id => "forumpost" %>
-                  <%= f.label :content, "Reply to this wall" %><br>
-                  <%= f.text_field :content %>
+                  <%= f.label :content, "Write a comment" %>
+                  <%= f.text_area :content, :rows => "3" %>
               </div>
-              <%= f.submit "Reply", :onclick => "replypost(forumpost.value)", :id => "first_reply" %>
+              <%= f.submit "Reply", :onclick => "replypost('#{forumpost.forum}');", :id => "first_reply" %><span style="float:right;">
+              <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="close">
+            </span>
             <% end %>
           </div>
         </div>

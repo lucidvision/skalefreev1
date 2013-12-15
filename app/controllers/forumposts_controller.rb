@@ -19,6 +19,7 @@ class ForumpostsController < ApplicationController
   def forum
     @user = current_user
     @forumpost = @user.forumposts.build if signed_in?
+    @comment = @user.forumposts.build if signed_in?
     @forumposts = @user.forumposts.page(params[:page]) if signed_in?
     @q = Forumpost.search(params[:q])
     @wall = @q.result(distinct: true).page(params[:page])
