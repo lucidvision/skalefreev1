@@ -1,0 +1,7 @@
+<% forumpost.comments.each do |com| %>
+  <li>
+    <span><%= link_to com.user.name, com.user %> | 
+    <%= com.content %>
+    </span>
+  </li>
+<% end %>

@@ -4,10 +4,18 @@ class CommentsController < ApplicationController
 		@comment = Comment.new(params[:comment])
 		@comment.forumpost_id = params[:forumpost_id]
 		@comment.user_id = current_user.id
-    if @comment.save
-      redirect_to search_static_pages_path
-    else
-      redirect_to search_static_pages_path
+    respond_to do |format|
+    	if @comment.save
+    		format.mobile
+	      format.js
+	      format.mobilejs
+	      format.html
+    	else
+	      format.js
+	      format.html
+	      format.mobile
+	      format.mobilejs
+    	end
     end
 	end
 

@@ -23,11 +23,3 @@ function refresh_search()
 	},120));
 }
 
-function replypost(forum)
-{
-  x = forum;
-  $('#wall').val(x);
-  $('#first_reply').click(setTimeout(function(){
-    $('#second').click();
-  },120));
-}

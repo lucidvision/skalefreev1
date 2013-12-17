@@ -1,0 +1,6 @@
+<% forumpost.comments.each do |com| %>
+  <li style="height:auto; padding:10px;">
+    <%= link_to com.user.name, com.user %> | 
+    <%= com.content %>
+  </li>
+<% end %>

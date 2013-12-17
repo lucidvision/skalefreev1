@@ -35,14 +35,8 @@
       <% end %>
           <div data-role="collapsible", data-mini="true">
             <h3><%= forumpost.comments.count %> comments</h3>
-            <ul data-role="listview">
-              <% forumpost.comments.each do |com| %>
-                <li>
-                  <span><%= link_to com.user.name, com.user %> | 
-                  <%= com.content %>
-                  </span>
-                </li>
-              <% end %>
+            <ul data-role="listview", id="<%= forumpost.id %>_list", class="mobile_refresh1">
+              <%= render 'comments/comment', :forumpost => forumpost %>
             </ul><br><br>
             <div>
               <%= form_for :comment, :remote => true, :url => forumpost_comments_path(forumpost) do |f| %>

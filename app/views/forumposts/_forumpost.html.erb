@@ -36,22 +36,17 @@
         </span>
         <div id="<%= forumpost.id %>" class="collapse out">
           <div class="wallreply">
-            <% if forumpost.comments.any? %> 
-              <ul class="comments">
-                <% forumpost.comments.each do |com| %>
-                  <li style="height:auto; padding:10px;">
-                    <%= link_to com.user.name, com.user %> | 
-                    <%= com.content %>
-                  </li>
-                <% end %>
+            <div class="comments">
+              <ul id="<%= forumpost.id %>_list">
+                <%= render 'comments/comment', :forumpost => forumpost %>
               </ul>
-            <% end %>
+            </div>
             <%= form_for :comment, :remote => true, :url => forumpost_comments_path(forumpost) do |f| %>
               <div class="field">
                   <%= f.label :content, "Write a comment" %>
                   <%= f.text_area :content, :rows => "3" %>
               </div>
-              <%= f.submit "Reply", :onclick => "replypost('#{forumpost.forum}');", :id => "first_reply" %><span style="float:right;">
+              <%= f.submit "Reply" %><span style="float:right;">
               <input type="button" class="btn" data-toggle="collapse" data-target="#<%= forumpost.id %>" value="close"></span>
             <% end %>
           </div>

@@ -1,5 +1,5 @@
 <li>
-  <span class="id">Wall: <%= forumpost.forum %></span>
+  <span class="id"><%= forumpost.forum %></span>
   <% if signed_in? %>
     <span style="float:right;">
       <%= link_to "Like:", vote_forumpost_path(forumpost, type: "up"), method: "post", :remote => true %> 
@@ -15,7 +15,7 @@
     </span>
   <% end %>
   <br>
-  <span style="word-wrap:break-word;"><%= auto_link(forumpost.content) %></span><br>
+ <span style="word-wrap:break-word;"><%= auto_link(forumpost.content) %></span><br>
   <div class="f_info">
     <span>
       Posted <%= time_ago_in_words(forumpost.created_at) %> ago
@@ -32,19 +32,23 @@
         </a>
         <span>
           by <%= link_to forumpost.user.name, forumpost.user %> | Rep: <%= forumpost.user.reputation_for(:votes).to_i %> | <%= link_to "Private Message", new_conversation_path( target: forumpost.user.name, reason: forumpost.forum ) %>
+      <% end %>
           <div data-role="collapsible", data-mini="true">
-            <h3>Reply</h3>
-            <%= form_for @forumpost, :remote => true do |f| %>
+            <h3><%= forumpost.comments.count %> comments</h3>
+            <ul data-role="listview", id="<%= forumpost.id %>_list", class="mobile_refresh1">
+              <%= render 'comments/comment', :forumpost => forumpost %>
+            </ul><br><br>
+            <div>
+              <%= form_for :comment, :remote => true, :url => forumpost_comments_path(forumpost) do |f| %>
               <div class="field">
-                <%= f.hidden_field :forum, value: forumpost.forum, :id => "forumpost" %>
-                <%= f.label :content, "Reply to this wall" %>
-                <%= f.text_field :content %>
-                <%= f.submit "Reply", :onclick => "replypost(forumpost.value)", :id => "first_reply" %>
+                  <%= f.label :content, "Write a comment" %>
+                  <%= f.text_field :content %>
               </div>
+              <%= f.submit "Reply", :onclick => "replypost('#{forumpost.forum}');", :id => "first_reply" %>
             <% end %>
+            </div>
           </div>
         </span>
-      <% end %>
     <% else %>
       by <%= forumpost.user.name %> | Please <%= link_to "sign in", :new_user_session %>
     <% end %> 
