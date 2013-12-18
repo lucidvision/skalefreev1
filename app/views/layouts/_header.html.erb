@@ -5,7 +5,7 @@
         <%= link_to image_tag("logo.jpg"), root_path %>
         <ul class="nav pull-right">
           <li><%= link_to "Find People", findyou_path %></li>
-          <li><%= link_to "News Feed", wall_path %></li>
+          <li><%= link_to "Share Thoughts", wall_path %></li>
           <% if signed_in? %>
             <% if current_user.admin? %>
               <li><%= link_to "Users", users_path %></li>
