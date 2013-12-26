@@ -4,11 +4,11 @@
                         builder: Combobox1FormBuilder do |s| %>
   <div class="field">
     <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Keyword" %>
-    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Spring 2014", "Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %><br><br>
+    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Courses Spring 2014", "Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %><br><br>
     <input type="button" class="btn btn-success" data-toggle="collapse" data-target="#criteria" value="Advanced Criteria">
     <div id="criteria" class="collapse out">
         <br>
-        <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, "Criteria 1" %>
+        <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, 'Criteria 1 (Ex: engl 100)' %>
         <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
         <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>
         <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont %>

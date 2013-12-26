@@ -1,8 +1,8 @@
 <%= form_for @findpost, :remote => true, builder: ComboboxFormBuilder do |f| %>
   <div class="field">
-  	<%= f.label :c1, "Subject" %>
-    <%= f.combobox_tag(:c1, options_for_select(["Courses I'm taking for Spring 2014!", "Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
-    <%= f.label :c2, "Criteria 1" %>
+  	<%= f.label :c1, 'Subject (Ex: Courses Spring 2014)' %>
+    <%= f.combobox_tag(:c1, options_for_select(["Courses for Spring 2014", "Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
+    <%= f.label :c2, 'Criteria 1 (Ex: engl 100)' %>
     <%= f.text_field :c2 %>
     <%= f.label :c3, "Criteria 2" %>
     <%= f.text_field :c3 %>
