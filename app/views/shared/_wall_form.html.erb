@@ -3,7 +3,7 @@
                         :remote => true,
                         builder: Combobox1FormBuilder do |f| %>
   <div class="field">
-    <%= f.label :forum_cont, "Select a Wall" %>
+    <%= f.label :forum_cont, "Select a Wall (Ex. engl 100)" %>
     <%= f.combobox_tag(:forum_cont, options_for_select(["Random Thought", "Confession", "Secret Crush", "BUS Production 145", "Funny", "TIL", "Amazing", "Games", "News", "Academic", "Social", "SFU", "Sport", "Intellectual", "Entertainment", "WTF", "Music", "Club", "Skalefree"]), :list_id => "list")   %>
   </div>
   <%= f.submit "Select", :onclick => "store_search()", :id => "second", class: "btn btn-success" %>
