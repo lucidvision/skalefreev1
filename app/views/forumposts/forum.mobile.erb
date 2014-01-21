@@ -1,10 +1,13 @@
 <% provide(:title, 'News Feed') %>
 <div data-role="content">
-  <%= render 'shared/wall_form' %>
-  <h3>You have selected the wall: <span id="wall_selection"></span></h3>
-  <% if signed_in? %> 
-    <%= render 'shared/forumpost_form' %>
-  <% end %><br>
+	<div data-role="collapsible">
+		<h3>Post on News Feed</h3>
+	  <%= render 'shared/wall_form' %>
+	  <h3>You have selected the wall: <span id="wall_selection"></span></h3>
+	  <% if signed_in? %> 
+	    <%= render 'shared/forumpost_form' %>
+	  <% end %><br>
+	</div>
   <h3><span id="wall_heading"></span> Wall</h3>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
       <%= render @wallm %>

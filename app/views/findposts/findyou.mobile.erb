@@ -1,9 +1,9 @@
 <% provide(:title, 'Class Schedules') %>
 <div data-role="content">
-    <%= render 'shared/search_form' %>
-    <% if signed_in? %>
-      <%= button_to "Add Schedule", findme_path, :class => "btn btn-success"%>
-    <% end %>
+  <% if signed_in? %>
+    <%= button_to "Add Schedule", findme_path, :class => "btn btn-success"%>
+  <% end %>
+  <%= render 'shared/search_form' %>
   <% if @results.any? %>
     <h3>SFU Class Schedules</h3>
     <ul data-role="listview">

@@ -1,4 +1,4 @@
-<% provide(:title, 'Add Class Schedule') %>
+<% provide(:title, 'Add Schedule') %>
 <div class="row">
   <aside class="span4">
     <div class="sborder">
@@ -13,7 +13,7 @@
   </aside>
   <div class="span8">
     <% if @user.findposts.any? %>
-      <h3 class="pHeadings">Add Class Schedule (<%= @user.findposts.count %>)</h3>
+      <h3 class="pHeadings">Add Schedule (<%= @user.findposts.count %>)</h3>
       <ol class="results">
         <%= render @findposts %>
       </ol>
