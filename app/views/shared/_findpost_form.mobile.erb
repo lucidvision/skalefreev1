@@ -1,18 +1,21 @@
-<%= form_for @findpost do |f| %>
-  (Follow examples exactly!)<br><br>  
-  <div class="field">
-  	<%= f.label 'Semester' %>
-    <%= f.text_field :c1, :placeholder => "Spring 2014" %>
-    <%= f.label 'Course 1' %>
-    <%= f.text_field :c2, :placeholder => "ENGL 100" %>
-    <%= f.label "Course 2" %>
-    <%= f.text_field :c3, :placeholder => "PYSC 101" %>
-    <%= f.label "Course 3" %>
-    <%= f.text_field :c4, :placeholder => "ECON 102" %>
-    <%= f.label "Course 4" %>
-    <%= f.text_field :c5, :placeholder => "MATH 103" %>
-    <%= f.label "Course 5" %>
-    <%= f.text_field :c6, :placeholder => "PHIL 104" %>
-  </div>
-  <%= f.submit "Post" %>
-<% end %>
+<div data-role="collapsible">
+  <h3>Add Schedule</h3>
+  <%= form_for @findpost do |f| %>
+    (Follow examples exactly!)<br><br>  
+    <div class="field">
+    	<%= f.label 'Semester' %>
+      <%= f.text_field :c1, :placeholder => "Spring 2014" %>
+      <%= f.label 'Course 1' %>
+      <%= f.text_field :c2, :placeholder => "ENGL 100" %>
+      <%= f.label "Course 2" %>
+      <%= f.text_field :c3, :placeholder => "PYSC 101" %>
+      <%= f.label "Course 3" %>
+      <%= f.text_field :c4, :placeholder => "ECON 102" %>
+      <%= f.label "Course 4" %>
+      <%= f.text_field :c5, :placeholder => "MATH 103" %>
+      <%= f.label "Course 5" %>
+      <%= f.text_field :c6, :placeholder => "PHIL 104" %>
+    </div>
+    <%= f.submit "Post" %>
+  <% end %>
+</div>
