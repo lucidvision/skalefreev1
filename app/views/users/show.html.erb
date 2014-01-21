@@ -30,7 +30,7 @@
     <div class="span8">
       <div style="float:right;">
         <% if @user.findposts.any? %>
-          <h3 class="pHeadings">Findposts (<%=@user.findposts.count%>)</h3>
+          <h3 class="pHeadings">Class Schedules (<%=@user.findposts.count%>)</h3>
           <ol class="results">
             <%= render @findposts %>
           </ol>
