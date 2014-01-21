@@ -1,8 +1,8 @@
-<%= form_for @findpost, :remote => true, builder: Combobox1FormBuilder do |f| %>
+<%= form_for @findpost, :remote => true, builder: ComboboxFormBuilder do |f| %>
   <div class="field">
   	<%= f.label :c1, 'Semester' %>
     <%= f.combobox_tag(:c1, options_for_select(["Spring 2014", "Fall 2013"]), :list_id => "list") %>
-    <%= f.label :c2, 'Course 1 *Follow examples exactly!' %>
+    <%= f.label :c2, 'Course 1 (Follow examples exactly!)' %>
     <%= f.text_field :c2, :placeholder => "ENGL 100" %>
     <%= f.label :c3, "Course 2" %>
     <%= f.text_field :c3, :placeholder => "PSYC 101" %>
