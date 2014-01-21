@@ -6,28 +6,14 @@
     </div>
     <br>
     <div class="sborder">
-      <b>Create Findpost</b><br><br>
+      <b>Add Class Schedule</b><br><br>
       <%= render 'shared/findpost_form' %>
     </div>
     <br>
-    <div class="sborder">
-      <p>
-        <b>Suggested Criteria:</b><br>
-        1. Purpose <br>
-        2. Location <br>
-        3. Time <br>
-        4. Goal <br>
-        5. Interests <br>
-        6. Condition <br>
-        8. Qualification <br>
-        9. Personality <br>
-        10. Additional Information <br>
-      </p>
-    </div>
   </aside>
   <div class="span8">
     <% if @user.findposts.any? %>
-      <h3 class="pHeadings">Create Findposts (<%= @user.findposts.count %>)</h3>
+      <h3 class="pHeadings">Add Class Schedule (<%= @user.findposts.count %>)</h3>
       <ol class="results">
         <%= render @findposts %>
       </ol>

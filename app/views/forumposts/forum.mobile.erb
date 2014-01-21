@@ -1,11 +1,11 @@
-<% provide(:title, 'Share Thoughts') %>
+<% provide(:title, 'News Feed') %>
 <div data-role="content">
   <%= render 'shared/wall_form' %>
   <h3>You have selected the wall: <span id="wall_selection"></span></h3>
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %><br>
-  <h3><span id="wall_heading"></span> Wallposts</h3>
+  <h3><span id="wall_heading"></span> News Feed</h3>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
       <%= render @wallm %>
     </ul>

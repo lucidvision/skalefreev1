@@ -3,18 +3,18 @@
                         :remote => true,
                         builder: Combobox1FormBuilder do |s| %>
   <div class="field">
-    <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Keyword" %>
-    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Spring 2014", "Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %><br><br>
-    <input type="button" class="btn btn-success" data-toggle="collapse" data-target="#criteria" value="Advanced Criteria">
-    <div id="criteria" class="collapse out">
-        <br>
-        <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, 'Criteria 1 (Ex: engl 100)' %>
-        <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont %>
-        <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Criteria 2" %>
-        <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont %>
-        <%= s.label :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, "Criteria 3" %>
-        <%= s.text_field :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont %>
-    </div><br>
+    <%= s.label :c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, "Semester" %>
+    <%= s.combobox_tag(:c1_or_c2_or_c3_or_c4_or_c5_or_c6_cont, options_for_select(["Spring 2014", "Fall 2013"]), :list_id => "list") %><br><br>
+    <%= s.label :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, 'Course 1' %>
+    <%= s.text_field :c2_or_c3_or_c4_or_c5_or_c6_or_c1_cont, :placeholder => "ENGL 100 *Follow examples exactly!" %>
+    <%= s.label :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, "Course 2" %>
+    <%= s.text_field :c3_or_c4_or_c5_or_c6_or_c1_or_c2_cont, :placeholder => "PSYC 101" %>
+    <%= s.label :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, "Course 3" %>
+    <%= s.text_field :c4_or_c5_or_c6_or_c1_or_c2_or_c3_cont, :placeholder => "ECON 102" %>
+    <%= s.label :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont, "Course 4" %>
+    <%= s.text_field :c5_or_c6_or_c1_or_c2_or_c3_or_c4_cont, :placeholder => "MATH 103" %>
+    <%= s.label :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont, "Course 5" %>
+    <%= s.text_field :c6_or_c1_or_c2_or_c3_or_c4_or_c5_cont, :placeholder => "PHIL 104" %>
   </div>
   <%= s.submit "Search", class: "btn btn-large btn-primary" %>
 <% end %>

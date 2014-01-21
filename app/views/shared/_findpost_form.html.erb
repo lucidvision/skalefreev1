@@ -1,17 +1,17 @@
 <%= form_for @findpost, :remote => true, builder: ComboboxFormBuilder do |f| %>
   <div class="field">
-  	<%= f.label :c1, 'Subject (Ex: Courses Spring 2014)' %>
-    <%= f.combobox_tag(:c1, options_for_select(["Courses Spring 2014", "Study", "Friend", "Break", "Games", "Project", "Event", "Textbook", "Sport", "Party", "Music", "Club", "Tutor"]), :list_id => "list") %>
-    <%= f.label :c2, 'Criteria 1 (Ex: engl 100)' %>
-    <%= f.text_field :c2 %>
-    <%= f.label :c3, "Criteria 2" %>
-    <%= f.text_field :c3 %>
-    <%= f.label :c4, "Criteria 3" %>
-    <%= f.text_field :c4 %>
-    <%= f.label :c5, "Criteria 4" %>
-    <%= f.text_field :c5 %>
-    <%= f.label :c6, "Criteria 5" %>
-    <%= f.text_field :c6 %>
+  	<%= f.label :c1, 'Semester' %>
+    <%= f.combobox_tag(:c1, options_for_select(["Spring 2014", "Fall 2013"]), :list_id => "list") %>
+    <%= f.label :c2, 'Course 1' %>
+    <%= f.text_field :c2, :placeholder => "ENGL 100 *Follow examples exactly!" %>
+    <%= f.label :c3, "Course 2" %>
+    <%= f.text_field :c3, :placeholder => "PSYC 101" %>
+    <%= f.label :c4, "Course 3" %>
+    <%= f.text_field :c4, :placeholder => "ECON 102" %>
+    <%= f.label :c5, "Course 4" %>
+    <%= f.text_field :c5, :placeholder => "MATH 103" %>
+    <%= f.label :c6, "Course 5" %>
+    <%= f.text_field :c6, :placeholder => "PHIL 104" %>
   </div>
-  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>

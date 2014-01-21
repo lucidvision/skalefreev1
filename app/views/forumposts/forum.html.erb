@@ -9,24 +9,24 @@
       <div class="sborder">
         <span style="font-size:140%;"><b>Share your thoughts!</b></span><br><br>
         Please <%= link_to "sign up", :new_user_registration%> to create wallposts, access profiles, and message users.<br><br>
-        Or browse the walls below.<br>
+        Or browse the Walls below.<br>
       </div>
     <% end %>
     <br>
     <div class="sborder">
-      <b>Create Wallposts</b><br><br>
+      <b>Post to News Feed</b><br><br>
       <%= render 'shared/wall_form' %>
     </div>
     <br>
     <div class="sborder">
-      <h5>You have selected the wall:<br><br><div id="wall_selection"></div></h5>
+      <h5>You have selected the Wall:<br><br><div id="wall_selection"></div></h5>
       <% if signed_in? %> 
         <%= render 'shared/forumpost_form' %>
       <% end %>
     </div>
   </aside>
   <div class="span8">
-    <h3 class="pHeadings">Share Thoughts using <span id="wall_heading"></span> Wallposts</h3>
+    <h3 class="pHeadings">Share Thoughts with Wall <span id="wall_heading"></span></h3>
     <ul class="results">
       <%= render @wall %>
     </ul>

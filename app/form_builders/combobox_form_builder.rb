@@ -3,7 +3,7 @@ class ComboboxFormBuilder < ActionView::Helpers::FormBuilder
   include ActionView::Helpers::FormTagHelper #for sanitize_to_id method access
 
   def combobox_tag(name, options, opts= {})
-     @template.content_tag(:input, :name => "findpost["+sanitize_to_id(name)+"]", :placeholder => "Double Click for Categories", :type => "text", :list => opts[:list_id]) do
+     @template.content_tag(:input, :name => "findpost["+sanitize_to_id(name)+"]", :placeholder => "Double for Click Semesters", :type => "text", :list => opts[:list_id]) do
        content_tag(:datalist, :id => opts[:list_id]) {options}
      end    
   end    

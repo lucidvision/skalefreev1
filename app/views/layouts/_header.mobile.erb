@@ -1,9 +1,6 @@
 <ul>
-		<li><%= link_to "Search", findyou_path %></li>
-		<% if signed_in? %>
-			<li><%= link_to "Create", findme_path %></li>
-		<% end %>
-			<li><%= link_to "Wall", wall_path %></li>
+		<li><%= link_to "Classes", findyou_path %></li>
+		<li><%= link_to "News Feed", wall_path %></li>
 		<% if signed_in? %>
 			<li><%= link_to @unread_count + " Mail", conversations_path %></li>
 			<li><%= link_to "Profile", current_user %></li>

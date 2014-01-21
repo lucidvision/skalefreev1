@@ -1,17 +1,17 @@
 <%= form_for @findpost do |f| %>
   <div class="field">
-  	<%= f.label 'Subject (Ex: Courses Spring 2014)' %>
-    <%= f.text_field :c1 %>
-    <%= f.label 'Criteria 1 (Ex: engl 100)' %>
-    <%= f.text_field :c2 %>
-    <%= f.label "Criteria 2" %>
-    <%= f.text_field :c3 %>
-    <%= f.label "Criteria 3" %>
-    <%= f.text_field :c4 %>
-    <%= f.label "Criteria 4" %>
-    <%= f.text_field :c5 %>
-    <%= f.label "Criteria 5" %>
-    <%= f.text_field :c6 %>
+  	<%= f.label 'Semester' %>
+    <%= f.text_field :c1, :placeholder => "Spring 2014" %>
+    <%= f.label 'Course 1' %>
+    <%= f.text_field :c2, :placeholder => "ENGL 100 *Follow examples exactly!" %>
+    <%= f.label "Course 2" %>
+    <%= f.text_field :c3, :placeholder => "PYSC 101" %>
+    <%= f.label "Course 3" %>
+    <%= f.text_field :c4, :placeholder => "ECON 102" %>
+    <%= f.label "Course 4" %>
+    <%= f.text_field :c5, :placeholder => "MATH 103" %>
+    <%= f.label "Course 5" %>
+    <%= f.text_field :c6, :placeholder => "PHIL 104" %>
   </div>
-  <%= f.submit "Create" %>
+  <%= f.submit "Post" %>
 <% end %>
