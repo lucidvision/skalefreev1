@@ -1,7 +1,7 @@
 <% forumpost.comments.each do |com| %>
   <li>
-    <span><%= link_to com.user.name, com.user %> | 
-    <%= auto_link(simple_format(com.content)) %>
-    </span>
+    <div style="word-wrap:break-word;">
+    	<%= link_to com.user.name, com.user %> | <%= auto_link(com.content) %>
+    </div>
   </li>
 <% end %>
