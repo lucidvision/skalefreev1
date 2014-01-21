@@ -5,7 +5,7 @@
   <% if signed_in? %> 
     <%= render 'shared/forumpost_form' %>
   <% end %><br>
-  <h3><span id="wall_heading"></span> News Feed</h3>
+  <h3><span id="wall_heading"></span> Wall</h3>
     <ul data-role="listview", class="wall_mobile", id="mobile_refresh">
       <%= render @wallm %>
     </ul>
