@@ -4,7 +4,7 @@
                         builder: Combobox2FormBuilder do |f| %>
   <div class="field">
     <%= f.label :forum_cont, "Select a Wall" %>
-    <%= f.combobox_tag(:forum_cont, options_for_select(["Random Thought", "Confession", "Secret Crush", "BUS Production 145", "Funny", "TIL", "Amazing", "Games", "News", "Academic", "Selling", "Social", "SFU", "Sport", "Intellectual", "Entertainment", "WTF", "Music", "Club", "Skalefree"]), :list_id => "list")   %>
+    <%= f.combobox_tag(:forum_cont, options_for_select(["Random Thought", "Confession", "Secret Crush", "BUS Production 145", "Funny", "Tips", "Amazing", "Games", "Academic", "Selling", "Textbook", "SFU", "Intellectual", "WTF", "Music", "Skalefree"]), :list_id => "list")   %>
   </div>
   <%= f.submit "Select", :onclick => "store_search()", :id => "second", class: "btn btn-success" %>
 <% end %>
