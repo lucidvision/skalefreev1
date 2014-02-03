@@ -5,7 +5,8 @@ class Findpost < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :c1, presence: true
-  validates :c2, presence: true
+  validates :course1, presence: true
+  validates :number1, presence: true
 
   def course1
     @course1
