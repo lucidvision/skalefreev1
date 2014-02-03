@@ -4,6 +4,8 @@ class Findpost < ActiveRecord::Base
   before_save :coursecode1, :coursecode2, :coursecode3, :coursecode4, :coursecode5
 
   validates :user_id, presence: true
+  validates :c1, presence: true
+  validates :c2, presence: true
 
   def course1
     @course1
