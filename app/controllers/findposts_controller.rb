@@ -6,10 +6,10 @@ class FindpostsController < ApplicationController
     @findpost = current_user.findposts.build(params[:findpost])
     if @findpost.save
       flash[:success] = "Findpost created!"
-      redirect_to findme_path
+      redirect_to findyou_path
     else
       flash[:error] = "Error creating your Findpost! You need at least a subject or your criteria was too long."
-      redirect_to findme_path
+      redirect_to findyou_path
     end
   end
 
@@ -41,7 +41,7 @@ class FindpostsController < ApplicationController
 
   def destroy
     @findpost.destroy
-    redirect_to findme_path
+    redirect_to findyou_path
   end
 
   def popup
