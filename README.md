@@ -10,6 +10,6 @@ URL: http://skalefree.heroku.com/
 
 Video Demo: https://www.youtube.com/watch?v=xHBqFLJfDH4
 
-https://www.google.ca/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=skalefree
+http://604now.com/2014/01/15/skalefree-a-new-way-for-sfu-students-to-connect/
 
 http://en.wikipedia.org/wiki/Scale-free_network
