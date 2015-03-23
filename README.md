@@ -9,3 +9,7 @@ Readme for Skalefree
 URL: http://skalefree.heroku.com/
 
 Video Demo: https://www.youtube.com/watch?v=xHBqFLJfDH4
+
+https://www.google.ca/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=skalefree
+
+http://en.wikipedia.org/wiki/Scale-free_network
