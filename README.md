@@ -13,6 +13,7 @@ http://skalefree.heroku.com/
 News Articles:
 
 http://www.the-peak.ca/2013/09/new-sfu-social-networking-site-connects-users/
+
 http://604now.com/2014/01/15/skalefree-a-new-way-for-sfu-students-to-connect/
 
 Name:
